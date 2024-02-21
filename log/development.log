@@ -25,3 +25,12 @@ Started GET "/a" for 127.0.0.1 at 2024-02-21 10:43:19 +0800
   
 ActionController::RoutingError (No route matches [GET] "/a"):
   
+Started GET "/" for 127.0.0.1 at 2024-02-21 10:46:59 +0800
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 109)
+  Rendered layout layouts/application.html.erb (Duration: 287.2ms | Allocations: 131571)
+Completed 200 OK in 289ms (Views: 288.4ms | ActiveRecord: 0.0ms | Allocations: 132476)
+
+
