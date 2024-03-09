@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_09_090905) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_09_091414) do
+  create_table "activities", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "carbon_emission"
+    t.integer "type_id", null: false
+    t.integer "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type_id"], name: "index_activities_on_type_id"
+    t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
   create_table "activity_types", force: :cascade do |t|
     t.string "name"
     t.string "climatiq_id"
@@ -32,4 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_09_090905) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "activities", "types"
+  add_foreign_key "activities", "users"
 end
