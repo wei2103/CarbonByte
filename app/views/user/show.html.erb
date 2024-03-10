@@ -1,9 +1,53 @@
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center mb-4 gap-2">
   <div>
     <%= image_tag "help-logo.png", alt: "Help University logo", class: "rounded-full max-w-32" %>
   </div>
-  <%= @user.username %>
+<span class="font-bold uppercase"><%= @user.username %></span>
 </div>
 
+<% if params[:id].to_i == current_user.id.to_i %>
 
-<%= ClimatiqEstimationService.calculate_carbon_emission(1, 200) %>
+  <%= form_with model: @activity, url: activities_path, class: "flex flex-col gap-5" do |form| %>
+    <div class="field flex flex-col">
+      <%= form.label :type_id %>
+      <%= select_tag "activity[activity_type_id]", options_for_select(@activity_types) %>
+    </div>
+
+    <div class="field flex flex-col">
+      <%= form.label :value, "Value", id: 'activity_value_label' %>
+      <%= form.number_field :value, id: 'activity_value' %>
+    </div>
+
+    <div class="actions flex justify-center">
+      <%= form.submit "Log Activity", class: "bg-blue-500 py-2 px-5 text-white font-bold"%>
+    </div>
+  <% end %>
+
+  <% if @activities.any? %>
+    <div class="flex flex-col gap-2">
+      <h2 class="font-bold text-xl">Activity Log</h2>
+      <table class="w-full border-collapse border">
+        <thead>
+          <tr>
+            <th class="text-left border border-gray-400 px-4 py-2">Date</th>
+            <th class="text-left border border-gray-400 px-4 py-2">Category</th>
+            <th class="text-left border border-gray-400 px-4 py-2">Type</th>
+            <th class="text-left border border-gray-400 px-4 py-2">Value</th>
+            <th class="text-left border border-gray-400 px-4 py-2">Carbon Emission</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @activities.each do |activity| %>
+            <tr>
+              <td class="border border-gray-400 px-4 py-2"><%= activity.created_at.strftime("%d/%m/%y") %></td>
+              <td class="border border-gray-400 px-4 py-2 capitalize"><%= activity.activity_type.category %></td>
+              <td class="border border-gray-400 px-4 py-2"><%= "#{activity.activity_type.name}" %></td>
+              <td class="border border-gray-400 px-4 py-2"><%= activity.value.to_s + " " + activity.activity_type.climatiq_unit_of_measurement %></td>
+              <td class="border border-gray-400 px-4 py-2"><%= activity.carbon_emission %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+<% end %>

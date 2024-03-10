@@ -1,0 +1,29 @@
+<h1>Welcome to the App</h1>
+
+<%= form_tag preferences_path, method: :post do %>
+  <!-- Include CSRF token for security -->
+  <%= csrf_meta_tags %>
+
+  <% ["transport", "energy", "food"].each do |category| %>
+    <h3><strong><%= category.capitalize %></strong></h3>
+    <% ActivityType.where(category: category).each_with_index do |activity_type, index| %>
+      <% checked = category == "energy" && index.zero? %>
+      <% disabled = checked ? true : false %>
+      <% checkbox_options = { checked: checked, disabled: disabled } %>
+      <label>
+        <%= check_box_tag 'user[preference_ids][]', activity_type.id, checked, checkbox_options %>
+        <%= activity_type.name %>
+      </label><br>
+      <% if disabled %>
+        <!-- Hidden field to submit disabled activity ID -->
+        <%= hidden_field_tag 'user[preference_ids][]', activity_type.id %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <!-- Add a submit button -->
+  <%= submit_tag "Save Preferences" %>
+<% end %>
+
+
+
