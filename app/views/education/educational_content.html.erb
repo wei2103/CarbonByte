@@ -1,0 +1,75 @@
+<h1><strong>Educational Content</strong></h1>
+<br>
+<%= form_with(url: educational_content_path, method: 'get', local: true, class: 'mb-4') do %>
+  <%= text_field_tag(:query, params[:query], placeholder: 'Search content...', class: 'form-control') %>
+  <%= submit_tag('Search', class: 'btn btn-primary') %>
+  <% if @search_results.present? %>
+  <h2 id="<%= @anchor %>">Search Results</h2>
+  <% @search_results.each do |result| %>
+    
+  <% end %>
+<% end %>
+<% end %>
+
+<br>
+<% if @videos.present? %>
+<div class="video-container">
+<% @videos.each do |video| %>
+  <div class="video-box">
+    
+    
+    <!-- Check if the content_link is present and it's a video link -->
+    <% if video.content_link.present? && video.content_type == 'video' %>
+      <div class="video-embed">
+        <%= raw("<iframe width='866' height='487' src='#{video.content_link}' frameborder='0' allowfullscreen></iframe>") %>
+      </div>
+    <% end %>
+    <p><strong><%= video.title %></strong></p>
+    <p><%= video.description %></p>
+  </div>
+<% end %>
+</div>
+<% else %>
+<p>No videos available</p>
+<% end %>
+<br><br>
+
+<% if @articles.present? %>
+  <table>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td style="width: 40%;">
+            <% if article.content_link.present? %>
+              <%= image_tag article.content_link, class: 'img-fluid', alt: article.title, style: 'width: 100%; height: auto;' %>
+            <% end %>
+          </td>
+          <td style="width: 60%;">
+            <p><strong><%= article.title %></strong></p>
+            <%= article.description %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No articles available</p>
+<% end %>
+
+
+<br><br>
+
+<% if @infographics.present? %>
+  <% @infographics.each do |infographic| %>
+    <div class="text-center">
+      <% if infographic.content_link.present? %>
+        <%= image_tag infographic.content_link, class: 'img-fluid mx-auto', alt: infographic.title, style: 'width: 500px; height: 400px;' %>
+      <% end %>
+    </div>
+    <p><strong><%= infographic.title %></strong></p>
+    <%= infographic.description %>
+  <% end %>
+<% else %>
+  <p>No infographics available</p>
+<% end %>
+
