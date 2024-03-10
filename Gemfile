@@ -78,3 +78,5 @@ gem "tailwindcss-rails", "~> 2.3"
 gem 'httparty'
 
 gem 'stimulus-rails'
+
+gem "chartkick"
