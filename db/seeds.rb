@@ -12,7 +12,7 @@ user = User.create(email: 'user@example.com', password: 'password')
 Content.create(
   user: user,
   content_type: 'video',
-  content_link: 'https://www.youtube.com/embed/0XNuj2wfnCk',
+  content_link: 'https://www.youtube.com/embed/J_iDcKDAwbA',
   title: 'How to Reduce Your Carbon Footprint',
   description: 'Video is about how to Reduce Your Carbon Footprint. A carbon footprint is the total amount of greenhouse gases, including carbon dioxide,
   that are emitted into the atmosphere as a result of our activities.'
