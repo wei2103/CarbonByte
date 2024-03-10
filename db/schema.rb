@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_10_091448) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_10_095732) do
   create_table "activities", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "carbon_emission"
@@ -30,6 +30,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_10_091448) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "climatiq_unit_type"
+  end
+
+  create_table "user_preferences", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "activity_type_id", null: false
+    t.index ["activity_type_id", "user_id"], name: "index_user_preferences_on_activity_type_id_and_user_id"
+    t.index ["user_id", "activity_type_id"], name: "index_user_preferences_on_user_id_and_activity_type_id"
   end
 
   create_table "users", force: :cascade do |t|

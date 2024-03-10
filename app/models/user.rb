@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :username, presence: true, uniqueness: true
+
+  has_and_belongs_to_many :preferences, -> { distinct }, class_name: 'ActivityType', join_table: :user_preferences
+  validates_uniqueness_of :preferences
 end
