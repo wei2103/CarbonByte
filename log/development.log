@@ -1,0 +1,849 @@
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240221023032)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240221023032"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-02-21 02:30:55.567409"], ["updated_at", "2024-02-21 02:30:55.567409"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-02-21 10:43:15 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/max/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/max/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.0ms | Allocations: 580)
+Completed 200 OK in 37ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 7682)
+
+
+Started GET "/a" for 127.0.0.1 at 2024-02-21 10:43:19 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/a"):
+  
+Started GET "/" for 127.0.0.1 at 2024-02-21 10:46:59 +0800
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 109)
+  Rendered layout layouts/application.html.erb (Duration: 287.2ms | Allocations: 131571)
+Completed 200 OK in 289ms (Views: 288.4ms | ActiveRecord: 0.0ms | Allocations: 132476)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActivityTypes (20240309090905)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "activity_types" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "climatiq_id" varchar, "climatiq_unit_of_measurement" varchar, "category" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240309090905"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActivities (20240309091414)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "activities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "carbon_emission" integer, "type_id" integer NOT NULL, "value" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_7e11bb717f"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_3a673f7980"
+FOREIGN KEY ("type_id")
+  REFERENCES "types" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_activities_on_user_id" ON "activities" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_activities_on_type_id" ON "activities" ("type_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240309091414"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddClimatiqUnitTypeToActivityTypes (20240309092931)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "activity_types" ADD "climatiq_unit_type" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240309092931"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivityType Create (1.4ms)[0m  [1m[32mINSERT INTO "activity_types" ("name", "climatiq_id", "climatiq_unit_of_measurement", "category", "created_at", "updated_at", "climatiq_unit_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Motorcycle"], ["climatiq_id", "passenger_vehicle-vehicle_type_motorcycle-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"], ["climatiq_unit_of_measurement", "km"], ["category", "transport"], ["created_at", "2024-03-09 09:33:23.957035"], ["updated_at", "2024-03-09 09:33:23.957035"], ["climatiq_unit_type", "distance"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivityType Create (0.3ms)[0m  [1m[32mINSERT INTO "activity_types" ("name", "climatiq_id", "climatiq_unit_of_measurement", "category", "created_at", "updated_at", "climatiq_unit_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bus"], ["climatiq_id", "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na"], ["climatiq_unit_of_measurement", "usd"], ["category", "transport"], ["created_at", "2024-03-09 09:33:23.962107"], ["updated_at", "2024-03-09 09:33:23.962107"], ["climatiq_unit_type", "money"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivityType Create (0.1ms)[0m  [1m[32mINSERT INTO "activity_types" ("name", "climatiq_id", "climatiq_unit_of_measurement", "category", "created_at", "updated_at", "climatiq_unit_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Car"], ["climatiq_id", "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na"], ["climatiq_unit_of_measurement", "km"], ["category", "transport"], ["created_at", "2024-03-09 09:33:23.963494"], ["updated_at", "2024-03-09 09:33:23.963494"], ["climatiq_unit_type", "distance"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivityType Create (0.1ms)[0m  [1m[32mINSERT INTO "activity_types" ("name", "climatiq_id", "climatiq_unit_of_measurement", "category", "created_at", "updated_at", "climatiq_unit_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Fresh Fruit"], ["climatiq_id", "consumer_goods-type_fruit_fresh"], ["climatiq_unit_of_measurement", "t"], ["category", "food"], ["created_at", "2024-03-09 09:33:23.964820"], ["updated_at", "2024-03-09 09:33:23.964820"], ["climatiq_unit_type", "weight"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivityType Create (0.1ms)[0m  [1m[32mINSERT INTO "activity_types" ("name", "climatiq_id", "climatiq_unit_of_measurement", "category", "created_at", "updated_at", "climatiq_unit_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Beef"], ["climatiq_id", "consumer_goods-type_meat_products_beef"], ["climatiq_unit_of_measurement", "usd"], ["category", "food"], ["created_at", "2024-03-09 09:33:23.965931"], ["updated_at", "2024-03-09 09:33:23.965931"], ["climatiq_unit_type", "money"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivityType Create (0.1ms)[0m  [1m[32mINSERT INTO "activity_types" ("name", "climatiq_id", "climatiq_unit_of_measurement", "category", "created_at", "updated_at", "climatiq_unit_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Dairy Products"], ["climatiq_id", "consumer_goods-type_dairy_products"], ["climatiq_unit_of_measurement", "usd"], ["category", "food"], ["created_at", "2024-03-09 09:33:23.967002"], ["updated_at", "2024-03-09 09:33:23.967002"], ["climatiq_unit_type", "money"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types"[0m
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."name" = ?[0m  [["name", "Motorcycle"]]
+  [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" ORDER BY "activity_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" ORDER BY "activity_types"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2024-03-09 23:27:10 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 425)
+  Rendered layout layouts/application.html.erb (Duration: 948.6ms | Allocations: 134469)
+Completed 200 OK in 997ms (Views: 954.0ms | ActiveRecord: 0.0ms | Allocations: 144285)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-03-09 23:27:22 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-03-09 23:27:26 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/max/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/max/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 237)
+  Rendered /Users/max/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 585)
+  Rendered /Users/max/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 19.9ms | Allocations: 4367)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 10104)
+Completed 200 OK in 45ms (Views: 34.7ms | ActiveRecord: 0.7ms | Allocations: 16557)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-03-09 23:28:07 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/max/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/max/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 270)
+  Rendered /Users/max/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 2361)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 8085)
+Completed 200 OK in 31ms (Views: 25.6ms | ActiveRecord: 0.0ms | Allocations: 9687)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-03-09 23:28:07 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/max/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/max/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 136)
+  Rendered /Users/max/.rbenv/versions/3.3.0/lib/ruby/gems/3.3.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1321)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 6969)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 7574)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-10 16:09:25 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 293)
+  Rendered layout layouts/application.html.erb (Duration: 176.6ms | Allocations: 51096)
+Completed 200 OK in 211ms (Views: 183.9ms | ActiveRecord: 0.0ms | Allocations: 57242)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:09:33 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+Started GET "/users/1" for 127.0.0.1 at 2024-03-10 16:09:49 +0800
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/users/1" for 127.0.0.1 at 2024-03-10 16:10:03 +0800
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/users/1" for 127.0.0.1 at 2024-03-10 16:10:04 +0800
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:11:09 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:11:22 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1353)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1441)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2110)
+
+
+  
+ActionView::Template::Error (uninitialized constant ClimatiqEstimationService::CLIMATIQ_API_KEY):
+    1: <div>
+    2:   <%= ClimatiqEstimationService.calculate_carbon_emissio(1, 200) %>
+    3: </div>
+  
+app/services/climatiq_estimation_service.rb:4:in `<class:ClimatiqEstimationService>'
+app/services/climatiq_estimation_service.rb:1:in `<main>'
+app/views/user/show.html.erb:2
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:14:27 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1915)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2017)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 6191)
+
+
+  
+ActionView::Template::Error (undefined method `calculate_carbon_emissio' for class ClimatiqEstimationService):
+    1: <div>
+    2:   <%= ClimatiqEstimationService.calculate_carbon_emissio(1, 200) %>
+    3: </div>
+  
+app/views/user/show.html.erb:2
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:14:39 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities" WHERE "activities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 6.9ms | Allocations: 6375)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 6464)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms | Allocations: 7292)
+
+
+  
+ActionView::Template::Error (Couldn't find Activity with 'id'=1):
+    1: <div>
+    2:   <%= ClimatiqEstimationService.calculate_carbon_emission(1, 200) %>
+    3: </div>
+  
+app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+app/views/user/show.html.erb:2
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:15:41 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 598.7ms | Allocations: 8604)
+  Rendered layout layouts/application.html.erb (Duration: 707.1ms | Allocations: 59182)
+Completed 200 OK in 710ms (Views: 707.6ms | ActiveRecord: 1.0ms | Allocations: 60151)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:16:12 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 247.0ms | Allocations: 5434)
+  Rendered layout layouts/application.html.erb (Duration: 298.9ms | Allocations: 28158)
+Completed 200 OK in 300ms (Views: 299.0ms | ActiveRecord: 0.7ms | Allocations: 28678)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:19:35 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 527.1ms | Allocations: 5345)
+  Rendered layout layouts/application.html.erb (Duration: 563.5ms | Allocations: 28066)
+Completed 200 OK in 565ms (Views: 563.5ms | ActiveRecord: 0.8ms | Allocations: 28584)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:24:54 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.7ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 611.1ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 690.1ms | Allocations: 33704)
+Completed 200 OK in 705ms (Views: 698.9ms | ActiveRecord: 0.7ms | Allocations: 34550)
+
+
+Started GET "/user/app/assets/images/image.png" for 127.0.0.1 at 2024-03-10 16:24:55 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/user/app/assets/images/image.png"):
+  
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:25:27 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.4ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 932.5ms | Allocations: 1551)
+  Rendered layout layouts/application.html.erb (Duration: 950.4ms | Allocations: 7945)
+Completed 200 OK in 953ms (Views: 951.7ms | ActiveRecord: 0.4ms | Allocations: 8791)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:25:29 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 215.8ms | Allocations: 1393)
+  Rendered layout layouts/application.html.erb (Duration: 228.1ms | Allocations: 7224)
+Completed 200 OK in 229ms (Views: 228.5ms | ActiveRecord: 0.2ms | Allocations: 7482)
+
+
+Started GET "/Users/max/Desktop/University/BIT216/CarbonByte/app/assets/images/image.png" for 127.0.0.1 at 2024-03-10 16:25:29 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/Users/max/Desktop/University/BIT216/CarbonByte/app/assets/images/image.png"):
+  
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:25:30 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 535.5ms | Allocations: 1438)
+  Rendered layout layouts/application.html.erb (Duration: 561.6ms | Allocations: 7415)
+Completed 200 OK in 563ms (Views: 562.1ms | ActiveRecord: 0.1ms | Allocations: 7674)
+
+
+Started GET "/Users/max/Desktop/University/BIT216/CarbonByte/app/assets/images/image.png" for 127.0.0.1 at 2024-03-10 16:25:31 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/Users/max/Desktop/University/BIT216/CarbonByte/app/assets/images/image.png"):
+  
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:25:55 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 550.8ms | Allocations: 10814)
+  Rendered layout layouts/application.html.erb (Duration: 561.6ms | Allocations: 14293)
+Completed 200 OK in 576ms (Views: 563.3ms | ActiveRecord: 0.6ms | Allocations: 18521)
+
+
+Started GET "/user/app/assets/images/image.png" for 127.0.0.1 at 2024-03-10 16:25:56 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/user/app/assets/images/image.png"):
+  
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:27:45 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 860.9ms | Allocations: 61870)
+  Rendered layout layouts/application.html.erb (Duration: 864.4ms | Allocations: 63108)
+Completed 200 OK in 877ms (Views: 870.4ms | ActiveRecord: 0.2ms | Allocations: 63954)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:28:16 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.5ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 501.9ms | Allocations: 2202)
+  Rendered layout layouts/application.html.erb (Duration: 505.5ms | Allocations: 3429)
+Completed 200 OK in 512ms (Views: 509.4ms | ActiveRecord: 0.5ms | Allocations: 4277)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:28:50 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 1099.2ms | Allocations: 47221)
+  Rendered layout layouts/application.html.erb (Duration: 1113.2ms | Allocations: 50579)
+Completed 200 OK in 1131ms (Views: 1116.9ms | ActiveRecord: 1.0ms | Allocations: 54486)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-10 16:29:00 +0800
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 1159)
+Completed 200 OK in 17ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 2987)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:29:08 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 506.8ms | Allocations: 2221)
+  Rendered layout layouts/application.html.erb (Duration: 511.0ms | Allocations: 3436)
+Completed 200 OK in 517ms (Views: 514.5ms | ActiveRecord: 0.2ms | Allocations: 4266)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:29:41 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 330.2ms | Allocations: 2196)
+  Rendered layout layouts/application.html.erb (Duration: 333.5ms | Allocations: 3404)
+Completed 200 OK in 354ms (Views: 349.3ms | ActiveRecord: 0.2ms | Allocations: 4232)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:30:29 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (1.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 223.7ms | Allocations: 2203)
+  Rendered layout layouts/application.html.erb (Duration: 226.8ms | Allocations: 3420)
+Completed 200 OK in 236ms (Views: 233.1ms | ActiveRecord: 1.1ms | Allocations: 4247)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:36:41 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.5ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 289.9ms | Allocations: 2354)
+  Rendered layout layouts/application.html.erb (Duration: 293.4ms | Allocations: 3562)
+Completed 200 OK in 311ms (Views: 305.6ms | ActiveRecord: 1.7ms | Allocations: 4387)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:37:00 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.6ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 450.9ms | Allocations: 2209)
+  Rendered layout layouts/application.html.erb (Duration: 456.2ms | Allocations: 3426)
+Completed 200 OK in 462ms (Views: 459.2ms | ActiveRecord: 0.6ms | Allocations: 4251)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:37:12 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.4ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 512.1ms | Allocations: 49650)
+  Rendered layout layouts/application.html.erb (Duration: 524.3ms | Allocations: 53005)
+Completed 200 OK in 536ms (Views: 524.9ms | ActiveRecord: 2.2ms | Allocations: 56912)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:37:15 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 339.6ms | Allocations: 2053)
+  Rendered layout layouts/application.html.erb (Duration: 341.9ms | Allocations: 3017)
+Completed 200 OK in 344ms (Views: 342.6ms | ActiveRecord: 0.3ms | Allocations: 3277)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:37:27 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 466.4ms | Allocations: 10545)
+  Rendered layout layouts/application.html.erb (Duration: 471.2ms | Allocations: 13880)
+Completed 200 OK in 481ms (Views: 472.8ms | ActiveRecord: 0.6ms | Allocations: 17787)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:39:06 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.7ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 232.7ms | Allocations: 1495)
+  Rendered layout layouts/application.html.erb (Duration: 235.2ms | Allocations: 2459)
+Completed 200 OK in 238ms (Views: 235.8ms | ActiveRecord: 0.7ms | Allocations: 2719)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:39:21 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.5ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 513.6ms | Allocations: 49944)
+  Rendered layout layouts/application.html.erb (Duration: 634.9ms | Allocations: 102160)
+Completed 200 OK in 656ms (Views: 638.1ms | ActiveRecord: 1.3ms | Allocations: 106067)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:39:30 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 492.3ms | Allocations: 2241)
+  Rendered layout layouts/application.html.erb (Duration: 542.8ms | Allocations: 12152)
+Completed 200 OK in 560ms (Views: 557.5ms | ActiveRecord: 0.1ms | Allocations: 12982)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:43:11 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (3.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 551.4ms | Allocations: 2194)
+  Rendered layout layouts/application.html.erb (Duration: 587.4ms | Allocations: 9347)
+Completed 200 OK in 606ms (Views: 592.5ms | ActiveRecord: 3.2ms | Allocations: 10173)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:43:17 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.4ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 376.0ms | Allocations: 2223)
+  Rendered layout layouts/application.html.erb (Duration: 402.1ms | Allocations: 9380)
+Completed 200 OK in 408ms (Views: 404.6ms | ActiveRecord: 0.4ms | Allocations: 10208)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:43:24 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.5ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 529.6ms | Allocations: 2187)
+  Rendered layout layouts/application.html.erb (Duration: 564.9ms | Allocations: 12178)
+Completed 200 OK in 571ms (Views: 568.1ms | ActiveRecord: 0.5ms | Allocations: 13005)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:43:28 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 165.6ms | Allocations: 2205)
+  Rendered layout layouts/application.html.erb (Duration: 184.6ms | Allocations: 12117)
+Completed 200 OK in 188ms (Views: 186.1ms | ActiveRecord: 0.1ms | Allocations: 12942)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:43:36 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.4ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 286.0ms | Allocations: 2223)
+  Rendered layout layouts/application.html.erb (Duration: 302.9ms | Allocations: 9398)
+Completed 200 OK in 328ms (Views: 326.3ms | ActiveRecord: 0.4ms | Allocations: 10223)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:43:43 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.8ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 200.8ms | Allocations: 2217)
+  Rendered layout layouts/application.html.erb (Duration: 219.7ms | Allocations: 9323)
+Completed 200 OK in 228ms (Views: 222.1ms | ActiveRecord: 0.8ms | Allocations: 10151)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:44:49 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.8ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 324.3ms | Allocations: 2184)
+  Rendered layout layouts/application.html.erb (Duration: 354.5ms | Allocations: 12163)
+Completed 200 OK in 381ms (Views: 370.3ms | ActiveRecord: 0.8ms | Allocations: 12988)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:44:53 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 440.0ms | Allocations: 2208)
+  Rendered layout layouts/application.html.erb (Duration: 471.5ms | Allocations: 12132)
+Completed 200 OK in 486ms (Views: 479.9ms | ActiveRecord: 0.3ms | Allocations: 12957)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:45:10 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.7ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 361.9ms | Allocations: 2225)
+  Rendered layout layouts/application.html.erb (Duration: 385.0ms | Allocations: 9371)
+Completed 200 OK in 399ms (Views: 389.3ms | ActiveRecord: 0.7ms | Allocations: 10199)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:45:26 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.5ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 162.4ms | Allocations: 2207)
+  Rendered layout layouts/application.html.erb (Duration: 188.6ms | Allocations: 12169)
+Completed 200 OK in 192ms (Views: 190.4ms | ActiveRecord: 0.5ms | Allocations: 12996)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:45:44 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.4ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 616.8ms | Allocations: 2184)
+  Rendered layout layouts/application.html.erb (Duration: 665.9ms | Allocations: 12129)
+Completed 200 OK in 670ms (Views: 668.2ms | ActiveRecord: 0.4ms | Allocations: 12954)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:46:21 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.5ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 386.8ms | Allocations: 2294)
+  Rendered layout layouts/application.html.erb (Duration: 405.6ms | Allocations: 9447)
+Completed 200 OK in 410ms (Views: 407.5ms | ActiveRecord: 0.5ms | Allocations: 10275)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:46:30 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (1.0ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 382.0ms | Allocations: 2187)
+  Rendered layout layouts/application.html.erb (Duration: 407.4ms | Allocations: 9275)
+Completed 200 OK in 411ms (Views: 408.5ms | ActiveRecord: 1.0ms | Allocations: 10102)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:47:29 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.5ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 493.4ms | Allocations: 2206)
+  Rendered layout layouts/application.html.erb (Duration: 523.0ms | Allocations: 9300)
+Completed 200 OK in 528ms (Views: 524.9ms | ActiveRecord: 0.5ms | Allocations: 10125)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:47:31 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 169.9ms | Allocations: 2029)
+  Rendered layout layouts/application.html.erb (Duration: 201.4ms | Allocations: 8886)
+Completed 200 OK in 204ms (Views: 202.4ms | ActiveRecord: 0.2ms | Allocations: 9145)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:47:40 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  Rendered user/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 795)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 7881)
+Completed 200 OK in 23ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 8710)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:48:05 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.5ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 288.9ms | Allocations: 2228)
+  Rendered layout layouts/application.html.erb (Duration: 307.6ms | Allocations: 9308)
+Completed 200 OK in 315ms (Views: 309.6ms | ActiveRecord: 0.5ms | Allocations: 10135)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:48:13 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 299.5ms | Allocations: 48026)
+  Rendered layout layouts/application.html.erb (Duration: 328.1ms | Allocations: 74496)
+Completed 200 OK in 339ms (Views: 329.8ms | ActiveRecord: 0.8ms | Allocations: 78403)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:48:14 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 265.7ms | Allocations: 2047)
+  Rendered layout layouts/application.html.erb (Duration: 278.5ms | Allocations: 8873)
+Completed 200 OK in 280ms (Views: 279.2ms | ActiveRecord: 0.2ms | Allocations: 9133)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:48:34 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 161.0ms | Allocations: 2194)
+  Rendered layout layouts/application.html.erb (Duration: 182.3ms | Allocations: 9370)
+Completed 200 OK in 186ms (Views: 184.6ms | ActiveRecord: 0.2ms | Allocations: 10200)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:48:39 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 549.1ms | Allocations: 2234)
+  Rendered layout layouts/application.html.erb (Duration: 581.1ms | Allocations: 12188)
+Completed 200 OK in 590ms (Views: 587.4ms | ActiveRecord: 0.2ms | Allocations: 13018)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:48:44 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 176.8ms | Allocations: 2208)
+  Rendered layout layouts/application.html.erb (Duration: 186.1ms | Allocations: 9284)
+Completed 200 OK in 199ms (Views: 195.6ms | ActiveRecord: 0.2ms | Allocations: 10109)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:48:49 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 181.3ms | Allocations: 2185)
+  Rendered layout layouts/application.html.erb (Duration: 213.7ms | Allocations: 12133)
+Completed 200 OK in 222ms (Views: 217.9ms | ActiveRecord: 0.3ms | Allocations: 12958)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:49:00 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 185.4ms | Allocations: 2226)
+  Rendered layout layouts/application.html.erb (Duration: 216.3ms | Allocations: 12293)
+Completed 200 OK in 220ms (Views: 218.5ms | ActiveRecord: 0.1ms | Allocations: 13121)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:49:22 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 276.5ms | Allocations: 2190)
+  Rendered layout layouts/application.html.erb (Duration: 291.5ms | Allocations: 9296)
+Completed 200 OK in 315ms (Views: 306.6ms | ActiveRecord: 0.2ms | Allocations: 10123)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 16:49:23 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 225.7ms | Allocations: 2051)
+  Rendered layout layouts/application.html.erb (Duration: 237.0ms | Allocations: 8889)
+Completed 200 OK in 239ms (Views: 237.7ms | ActiveRecord: 0.2ms | Allocations: 9147)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 17:13:57 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:3:in `show'
+Completed 404 Not Found in 11ms (ActiveRecord: 3.5ms | Allocations: 2511)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/user_controller.rb:3:in `show'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUsernameToUsers (20240310091448)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "users" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240310091448"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
