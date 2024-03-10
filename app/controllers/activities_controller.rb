@@ -5,11 +5,11 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new
-    puts activity_params
+
     @activity.type_id = activity_params[:activity_type_id]
     @activity.user_id = current_user.id
     @activity.value = activity_params[:value].to_i
-    puts ClimatiqEstimationService.calculate_carbon_emission(activity_params[:activity_type_id], activity_params[:value].to_i).to_i
+
     @activity.carbon_emission = ClimatiqEstimationService.calculate_carbon_emission(activity_params[:activity_type_id], activity_params[:value].to_i).to_i
 
     if @activity.save

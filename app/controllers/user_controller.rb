@@ -1,4 +1,6 @@
 class UserController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @user = User.find(params[:id])
     @activities = Activity.where(user_id: current_user.id)

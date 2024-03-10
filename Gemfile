@@ -80,3 +80,5 @@ gem 'httparty'
 gem 'stimulus-rails'
 
 gem "chartkick"
+
+gem 'rspec-rails', '~> 5.0.0'
