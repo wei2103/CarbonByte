@@ -50,6 +50,13 @@ activity_types_data = [
     climatiq_unit_of_measurement: "usd",
     climatiq_unit_type: "money",
     category: "food"
+  },
+  {
+    name: "Electricity",
+    climatiq_id: "electricity-supply_grid-source_supplier_mix",
+    climatiq_unit_of_measurement: "kWh",
+    climatiq_unit_type: "energy",
+    category: "energy"
   }
 ]
 
@@ -57,4 +64,3 @@ activity_types_data = [
 activity_types_data.each do |activity_type_data|
   ActivityType.create!(activity_type_data)
 end
-

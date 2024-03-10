@@ -847,3 +847,150 @@ Migrating to AddUsernameToUsers (20240310091448)
   [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/use" for 127.0.0.1 at 2024-03-10 17:17:01 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/use"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-03-10 17:17:08 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 549)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3610)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 27518)
+Completed 200 OK in 37ms (Views: 28.8ms | ActiveRecord: 0.4ms | Allocations: 33089)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-03-10 17:18:33 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 205)
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 481)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 2743)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 10034)
+Completed 200 OK in 50ms (Views: 36.9ms | ActiveRecord: 0.0ms | Allocations: 11223)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-03-10 17:18:53 +0800
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"maxyeap", "email"=>"max.yongtuck@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :username. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00000001246d7098>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"maxyeap", "email"=>"max.yongtuck@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "max.yongtuck@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 537)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 80)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2583)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 9557)
+Completed 422 Unprocessable Entity in 1083ms (Views: 9.8ms | ActiveRecord: 0.7ms | Allocations: 18162)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-03-10 17:20:06 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 228)
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 550)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 4390)
+  Rendered layout layouts/application.html.erb (Duration: 275.3ms | Allocations: 65187)
+Completed 200 OK in 327ms (Views: 287.9ms | ActiveRecord: 1.8ms | Allocations: 75508)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-03-10 17:20:17 +0800
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"maxyeap", "email"=>"max.yongtuck@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "max.yongtuck@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "maxyeap"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "max.yongtuck@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2024-03-10 09:20:17.564836"], ["updated_at", "2024-03-10 09:20:17.564836"], ["username", "maxyeap"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 472ms (ActiveRecord: 5.6ms | Allocations: 11796)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-10 17:20:17 +0800
+Processing by DashboardController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 10403)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 0.0ms | Allocations: 12544)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-10 17:20:17 +0800
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 7031)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 7297)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 17:20:23 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 629.2ms | Allocations: 7715)
+  Rendered layout layouts/application.html.erb (Duration: 643.4ms | Allocations: 14671)
+Completed 200 OK in 651ms (Views: 644.7ms | ActiveRecord: 1.0ms | Allocations: 16643)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 17:21:38 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 271.4ms | Allocations: 2204)
+  Rendered layout layouts/application.html.erb (Duration: 292.7ms | Allocations: 12205)
+Completed 200 OK in 297ms (Views: 294.3ms | ActiveRecord: 0.3ms | Allocations: 13535)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 17:22:11 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 451.3ms | Allocations: 2201)
+  Rendered layout layouts/application.html.erb (Duration: 501.9ms | Allocations: 12398)
+Completed 200 OK in 509ms (Views: 503.9ms | ActiveRecord: 0.4ms | Allocations: 13710)
+
+
+Started GET "/user/1" for 127.0.0.1 at 2024-03-10 17:23:26 +0800
+Processing by UserController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:3:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering user/show.html.erb within layouts/application
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/services/climatiq_estimation_service.rb:7:in `calculate_carbon_emission'
+  Rendered user/show.html.erb within layouts/application (Duration: 258.1ms | Allocations: 2239)
+  Rendered layout layouts/application.html.erb (Duration: 270.1ms | Allocations: 9441)
+Completed 200 OK in 277ms (Views: 272.0ms | ActiveRecord: 0.3ms | Allocations: 10756)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActivityType Create (0.7ms)[0m  [1m[32mINSERT INTO "activity_types" ("name", "climatiq_id", "climatiq_unit_of_measurement", "category", "created_at", "updated_at", "climatiq_unit_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Electricity"], ["climatiq_id", "electricity-supply_grid-source_supplier_mix"], ["climatiq_unit_of_measurement", "kWh"], ["category", "energy"], ["created_at", "2024-03-10 09:39:20.105809"], ["updated_at", "2024-03-10 09:39:20.105809"], ["climatiq_unit_type", "energy"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types"[0m
