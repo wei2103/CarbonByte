@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :activities, only: [:new, :create]
   resources :activity_types, only: [:show]
   resources :dashboard, only: [:index]
+  get '/education/educational_content', to: 'education#educational_content', as: 'educational_content'
+  get '/education/new', to: 'education#new', as: 'new'
+  resources :contents, only: [:new, :create]
+  devise_for :users
 
   # Go to preferences/new when browse preferences/
   get 'preferences', to: 'preferences#new'

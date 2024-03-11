@@ -39,6 +39,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_10_200847) do
     t.index ["user_id", "activity_type_id"], name: "index_user_preferences_on_user_id_and_activity_type_id"
   end
 
+  create_table "contents", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "content_type"
+    t.string "content_link"
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -48,10 +59,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_10_200847) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.boolean "is_admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "activities", "activity_types", column: "type_id"
   add_foreign_key "activities", "users"
+  add_foreign_key "contents", "users"
 end
