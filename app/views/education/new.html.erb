@@ -2,7 +2,7 @@
   <div class="card p-4" style="border: 2px solid #ccc;">
     <h1 class="mb-4 text-3xl"><strong>Upload Content Form</strong></h1><br>
   
-    <%= form_with(model: @content, url: contents_path, local: true, html: { class: "mt-4" }) do |form| %>
+    <%= form_with(model: @content, url: education_index_path, local: true, html: { class: "mt-4" }) do |form| %>
       <div class="row mb-3">
         <div class="col-md-2">
           <%= form.label :title, class: "form-label" %>

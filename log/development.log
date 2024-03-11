@@ -31005,3 +31005,686 @@ Processing by DashboardController#index as HTML
 Completed 200 OK in 185ms (Views: 151.7ms | ActiveRecord: 1.6ms | Allocations: 109820)
 
 
+Started DELETE "/users/sign_out?_method=delete" for 127.0.0.1 at 2024-03-11 20:31:55 +0800
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 17ms (ActiveRecord: 1.4ms | Allocations: 4365)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-11 20:31:55 +0800
+Processing by DashboardController#index as TURBO_STREAM
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 375)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-03-11 20:31:55 +0800
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 702)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 3352)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | Allocations: 11003)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.0ms | Allocations: 12279)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-03-11 20:32:03 +0800
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"lancau123@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lancau123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.9ms | Allocations: 1370)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"lancau123@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 136)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1326)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 8907)
+Completed 200 OK in 287ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 9990)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-03-11 20:32:09 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 233)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 156)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2531)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 10149)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 11285)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2024-03-11 20:32:09 +0800
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"mengfoong@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "mengfoong@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", "2024-03-11 12:32:10.064901"], ["updated_at", "2024-03-11 12:32:10.065175"], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 336ms (ActiveRecord: 4.2ms | Allocations: 6766)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-11 20:32:10 +0800
+Processing by DashboardController#index as TURBO_STREAM
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.0ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivity Sum (0.1ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."name" AS "activity_types_name" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."name"[0m
+  ↳ app/controllers/dashboard_controller.rb:7:in `index'
+  [1m[36mActivity Sum (0.0ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+  ↳ app/controllers/dashboard_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 609)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 8138)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 11863)
+
+
+Started GET "/education" for 127.0.0.1 at 2024-03-11 20:32:18 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/education"):
+  
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:32:21 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2571)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 10228)
+Completed 200 OK in 30ms (Views: 16.4ms | ActiveRecord: 0.9ms | Allocations: 17647)
+
+
+Started GET "/education/educational_content" for 127.0.0.1 at 2024-03-11 20:32:57 +0800
+Processing by EducationController#educational_content as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/educational_content.html.erb within layouts/application
+  [1m[36mContent Load (0.4ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."content_type" = ?[0m  [["content_type", "video"]]
+  ↳ app/views/education/educational_content.html.erb:19
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."content_type" = ?[0m  [["content_type", "article"]]
+  ↳ app/views/education/educational_content.html.erb:42
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."content_type" = ?[0m  [["content_type", "infographic"]]
+  ↳ app/views/education/educational_content.html.erb:68
+  Rendered education/educational_content.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2947)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 10530)
+Completed 200 OK in 61ms (Views: 14.4ms | ActiveRecord: 1.0ms | Allocations: 13024)
+
+
+Started POST "/contents" for 127.0.0.1 at 2024-03-11 20:33:42 +0800
+  
+ActionController::RoutingError (uninitialized constant ContentsController):
+  
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:33:42 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.0ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1481)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 9063)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 11175)
+
+
+Started GET "/educatio" for 127.0.0.1 at 2024-03-11 20:36:37 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/educatio"):
+  
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:41:05 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.4ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 924)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 1012)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.3ms | Allocations: 15837)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `contents_path' for an instance of #<Class:0x0000000120b15000>):
+    2:   <div class="card p-4" style="border: 2px solid #ccc;">
+    3:     <h1 class="mb-4 text-3xl"><strong>Upload Content Form</strong></h1><br>
+    4:   
+    5:     <%= form_with(model: @content, url: contents_path, local: true, html: { class: "mt-4" }) do |form| %>
+    6:       <div class="row mb-3">
+    7:         <div class="col-md-2">
+    8:           <%= form.label :title, class: "form-label" %>
+  
+app/views/education/new.html.erb:5
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:41:15 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1594)
+  Rendered layout layouts/application.html.erb (Duration: 54.4ms | Allocations: 29403)
+Completed 200 OK in 70ms (Views: 55.0ms | ActiveRecord: 1.5ms | Allocations: 45591)
+
+
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:44:07 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.4ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 0.2ms | Allocations: 997)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.5ms | Allocations: 17114)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `contents_path' for an instance of #<Class:0x0000000120c794c8>):
+    2:   <div class="card p-4" style="border: 2px solid #ccc;">
+    3:     <h1 class="mb-4 text-3xl"><strong>Upload Content Form</strong></h1><br>
+    4:   
+    5:     <%= form_with(model: @content, url: contents_path, local: true, html: { class: "mt-4" }) do |form| %>
+    6:       <div class="row mb-3">
+    7:         <div class="col-md-2">
+    8:           <%= form.label :title, class: "form-label" %>
+  
+app/views/education/new.html.erb:5
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:44:09 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 1068)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 3179)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `contents_path' for an instance of #<Class:0x0000000120c794c8>):
+    2:   <div class="card p-4" style="border: 2px solid #ccc;">
+    3:     <h1 class="mb-4 text-3xl"><strong>Upload Content Form</strong></h1><br>
+    4:   
+    5:     <%= form_with(model: @content, url: contents_path, local: true, html: { class: "mt-4" }) do |form| %>
+    6:       <div class="row mb-3">
+    7:         <div class="col-md-2">
+    8:           <%= form.label :title, class: "form-label" %>
+  
+app/views/education/new.html.erb:5
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:44:10 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 1068)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 3174)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `contents_path' for an instance of #<Class:0x0000000120c794c8>):
+    2:   <div class="card p-4" style="border: 2px solid #ccc;">
+    3:     <h1 class="mb-4 text-3xl"><strong>Upload Content Form</strong></h1><br>
+    4:   
+    5:     <%= form_with(model: @content, url: contents_path, local: true, html: { class: "mt-4" }) do |form| %>
+    6:       <div class="row mb-3">
+    7:         <div class="col-md-2">
+    8:           <%= form.label :title, class: "form-label" %>
+  
+app/views/education/new.html.erb:5
+Started GET "/educatio" for 127.0.0.1 at 2024-03-11 20:44:14 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/educatio"):
+  
+Started GET "/educatio" for 127.0.0.1 at 2024-03-11 20:44:24 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/educatio"):
+  
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:45:39 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 981)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1068)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.4ms | Allocations: 3174)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `contents_path' for an instance of #<Class:0x0000000120c794c8>):
+    2:   <div class="card p-4" style="border: 2px solid #ccc;">
+    3:     <h1 class="mb-4 text-3xl"><strong>Upload Content Form</strong></h1><br>
+    4:   
+    5:     <%= form_with(model: @content, url: contents_path, local: true, html: { class: "mt-4" }) do |form| %>
+    6:       <div class="row mb-3">
+    7:         <div class="col-md-2">
+    8:           <%= form.label :title, class: "form-label" %>
+  
+app/views/education/new.html.erb:5
+Started GET "/educatio" for 127.0.0.1 at 2024-03-11 20:46:17 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/educatio"):
+  
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:46:21 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 22.5ms | Allocations: 2104)
+  Rendered layout layouts/application.html.erb (Duration: 69.3ms | Allocations: 30082)
+Completed 200 OK in 88ms (Views: 74.1ms | ActiveRecord: 0.9ms | Allocations: 32762)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 20:46:38 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Test", "content_type"=>"video", "content_link"=>"https://www.youtube.com/watch?v=zvOxVgNckkY"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2086)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 9889)
+Completed 200 OK in 54ms (Views: 12.5ms | ActiveRecord: 0.8ms | Allocations: 24476)
+
+
+Started GET "/education/" for 127.0.0.1 at 2024-03-11 20:47:36 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/education"):
+  
+Started GET "/education/" for 127.0.0.1 at 2024-03-11 20:48:06 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/education"):
+  
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:48:29 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.4ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1594)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 29336)
+Completed 200 OK in 30ms (Views: 15.2ms | ActiveRecord: 3.1ms | Allocations: 45518)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 20:48:40 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Test", "content_type"=>"video", "content_link"=>"https://www.youtube.com/watch?v=zvOxVgNckkY"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.3ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 9134)
+Completed 200 OK in 56ms (Views: 39.4ms | ActiveRecord: 0.5ms | Allocations: 12566)
+
+
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:48:53 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1481)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 9012)
+Completed 200 OK in 36ms (Views: 26.7ms | ActiveRecord: 0.3ms | Allocations: 11142)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 20:48:58 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Test", "content_type"=>"video", "content_link"=>"https://www.youtube.com/watch?v=zvOxVgNckkY"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.1ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1507)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 9002)
+Completed 200 OK in 33ms (Views: 10.1ms | ActiveRecord: 0.7ms | Allocations: 11797)
+
+
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+Started GET "/education/educational_content" for 127.0.0.1 at 2024-03-11 20:50:34 +0800
+Processing by EducationController#educational_content as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  [1m[36mActivityType Load (0.2ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" INNER JOIN "user_preferences" ON "activity_types"."id" = "user_preferences"."activity_type_id" WHERE "user_preferences"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/application_controller.rb:23:in `redirect_to_welcome_if_preferences_blank'
+  Rendering layout layouts/application.html.erb
+  Rendering education/educational_content.html.erb within layouts/application
+  [1m[36mContent Load (0.4ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."content_type" = ?[0m  [["content_type", "video"]]
+  ↳ app/views/education/educational_content.html.erb:19
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."content_type" = ?[0m  [["content_type", "article"]]
+  ↳ app/views/education/educational_content.html.erb:42
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."content_type" = ?[0m  [["content_type", "infographic"]]
+  ↳ app/views/education/educational_content.html.erb:68
+  Rendered education/educational_content.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2896)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 10392)
+Completed 200 OK in 22ms (Views: 13.2ms | ActiveRecord: 0.8ms | Allocations: 12869)
+
+
+Started GET "/education" for 127.0.0.1 at 2024-03-11 20:50:51 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/education"):
+  
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:51:40 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1776)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 29579)
+Completed 200 OK in 37ms (Views: 30.2ms | ActiveRecord: 1.5ms | Allocations: 34125)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 20:51:49 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Test", "content_type"=>"video", "content_link"=>"https://www.youtube.com/watch?v=zvOxVgNckkY"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 9087)
+Completed 200 OK in 51ms (Views: 41.4ms | ActiveRecord: 0.0ms | Allocations: 10870)
+
+
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:52:02 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1681)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 9176)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 9450)
+
+
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:54:32 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1797)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 29539)
+Completed 200 OK in 21ms (Views: 16.3ms | ActiveRecord: 0.4ms | Allocations: 34085)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 20:54:37 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Test", "content_type"=>"video", "content_link"=>"https://www.youtube.com/watch?v=zvOxVgNckkY"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 9009)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 10802)
+
+
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:55:18 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1788)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 29602)
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 0.3ms | Allocations: 34148)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 20:55:22 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Test", "content_type"=>"video", "content_link"=>"Test"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 9087)
+Completed 200 OK in 45ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 10875)
+
+
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:57:36 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1776)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | Allocations: 29520)
+Completed 200 OK in 43ms (Views: 34.5ms | ActiveRecord: 0.5ms | Allocations: 34067)
+
+
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:58:13 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1794)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 29271)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 0.3ms | Allocations: 33817)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 20:58:19 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Teets", "content_type"=>"video", "content_link"=>"https://www.youtube.com/watch?v=zvOxVgNckkY"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 9012)
+Completed 200 OK in 51ms (Views: 34.3ms | ActiveRecord: 0.0ms | Allocations: 10817)
+
+
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:58:41 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1797)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 29540)
+Completed 200 OK in 22ms (Views: 17.8ms | ActiveRecord: 0.4ms | Allocations: 34066)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 20:58:47 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Test", "content_type"=>"video", "content_link"=>"Test"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 9009)
+Completed 200 OK in 41ms (Views: 22.9ms | ActiveRecord: 0.0ms | Allocations: 10800)
+
+
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:58:55 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1666)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 9161)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 9435)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 20:58:59 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"zyr", "content_type"=>"video", "content_link"=>"https://www.youtube.com/watch?v=zvOxVgNckkY"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1507)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 9216)
+Completed 200 OK in 28ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 10337)
+
+
+Started GET "/education" for 127.0.0.1 at 2024-03-11 20:59:49 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/education"):
+  
+Started GET "/education" for 127.0.0.1 at 2024-03-11 20:59:49 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/education"):
+  
+Started GET "/education" for 127.0.0.1 at 2024-03-11 20:59:51 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/education"):
+  
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 20:59:53 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1782)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 29524)
+Completed 200 OK in 48ms (Views: 24.5ms | ActiveRecord: 3.1ms | Allocations: 34070)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 21:00:00 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Test", "content_type"=>"video", "content_link"=>"https://www.youtube.com/watch?v=zvOxVgNckkY"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 2435)
+
+
+  
+NoMethodError (undefined method `put' for an instance of EducationController):
+  
+app/controllers/education_controller.rb:23:in `create'
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 21:00:12 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1782)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 29625)
+Completed 200 OK in 27ms (Views: 22.5ms | ActiveRecord: 0.4ms | Allocations: 34171)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 21:00:18 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Test", "content_type"=>"video", "content_link"=>"https://www.youtube.com/watch?v=zvOxVgNckkY"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 9086)
+Completed 200 OK in 37ms (Views: 31.0ms | ActiveRecord: 0.0ms | Allocations: 11232)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 21:01:25 +0800
+Processing by EducationController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1788)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 29539)
+Completed 200 OK in 28ms (Views: 22.4ms | ActiveRecord: 0.6ms | Allocations: 34085)
+
+
+Started POST "/education" for 127.0.0.1 at 2024-03-11 21:01:31 +0800
+Processing by EducationController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>{"title"=>"Test", "description"=>"Test", "content_type"=>"video", "content_link"=>"https://www.youtube.com/watch?v=zvOxVgNckkY"}, "commit"=>"Submit"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/education_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/education_controller.rb:20:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/education_controller.rb:20:in `create'
+  [1m[36mContent Create (2.6ms)[0m  [1m[32mINSERT INTO "contents" ("user_id", "content_type", "content_link", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["user_id", 2], ["content_type", "video"], ["content_link", "https://www.youtube.com/watch?v=zvOxVgNckkY"], ["title", "Test"], ["description", "Test"], ["created_at", "2024-03-11 13:01:31.478531"], ["updated_at", "2024-03-11 13:01:31.478531"]]
+  ↳ app/controllers/education_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/education_controller.rb:20:in `create'
+Redirected to http://127.0.0.1:3000/education/educational_content
+Completed 302 Found in 46ms (ActiveRecord: 7.2ms | Allocations: 8896)
+
+
+Started GET "/education/educational_content" for 127.0.0.1 at 2024-03-11 21:01:31 +0800
+Processing by EducationController#educational_content as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering education/educational_content.html.erb within layouts/application
+  [1m[36mContent Load (0.1ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."content_type" = ?[0m  [["content_type", "video"]]
+  ↳ app/views/education/educational_content.html.erb:19
+  [1m[36mContent Load (0.1ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."content_type" = ?[0m  [["content_type", "article"]]
+  ↳ app/views/education/educational_content.html.erb:42
+  [1m[36mContent Load (0.0ms)[0m  [1m[34mSELECT "contents".* FROM "contents" WHERE "contents"."content_type" = ?[0m  [["content_type", "infographic"]]
+  ↳ app/views/education/educational_content.html.erb:68
+  Rendered education/educational_content.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2098)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 9874)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 10431)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mContent Load (0.2ms)[0m  [1m[34mSELECT "contents".* FROM "contents"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "mengfoong"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "mengfoong"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "is_admin" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2024-03-11 13:03:47.320947"], ["is_admin", 1], ["id", 2]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 21:04:02 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/education_controller.rb:49:in `is_admin?'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.9ms | Allocations: 5446)
+
+
+  
+NoMethodError (undefined method `admin?' for an instance of User):
+  
+app/controllers/education_controller.rb:49:in `is_admin?'
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 21:04:03 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/education_controller.rb:49:in `is_admin?'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms | Allocations: 1428)
+
+
+  
+NoMethodError (undefined method `admin?' for an instance of User):
+  
+app/controllers/education_controller.rb:49:in `is_admin?'
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 21:04:04 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/education_controller.rb:49:in `is_admin?'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms | Allocations: 1428)
+
+
+  
+NoMethodError (undefined method `admin?' for an instance of User):
+  
+app/controllers/education_controller.rb:49:in `is_admin?'
+Started GET "/education/new" for 127.0.0.1 at 2024-03-11 21:05:08 +0800
+Processing by EducationController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/education_controller.rb:49:in `is_admin?'
+  Rendering layout layouts/application.html.erb
+  Rendering education/new.html.erb within layouts/application
+  Rendered education/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1594)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 29336)
+Completed 200 OK in 32ms (Views: 17.8ms | ActiveRecord: 0.9ms | Allocations: 37796)
+
+
