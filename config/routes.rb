@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :preferences, only: [:create]
   resources :activities, only: [:new, :create]
   resources :activity_types, only: [:show]
-
+  resources :dashboard, only: [:index]
 
   # Go to preferences/new when browse preferences/
   get 'preferences', to: 'preferences#new'

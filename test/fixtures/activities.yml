@@ -1,15 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  activity_id: 1
-  user: one
+  user_id: 1
   carbon_emission: 1
-  activity_type: one
+  type_id: 1
   value: 1
 
 two:
-  activity_id: 1
-  user: two
+  user_id: 2
   carbon_emission: 1
-  activity_type: two
+  type_id: 2
   value: 1

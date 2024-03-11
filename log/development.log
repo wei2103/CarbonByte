@@ -16500,3 +16500,145 @@ Completed 200 OK in 30ms (Views: 19.7ms | ActiveRecord: 1.0ms | Allocations: 169
 
   [1m[36mActivity Sum (0.8ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."name" AS "activity_types_name" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."name"[0m
   [1m[36mActivity Sum (0.6ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+  [1m[36mActivity Sum (1.0ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+  [1m[36mActivity Sum (0.5ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+Started GET "/" for 127.0.0.1 at 2024-03-11 07:25:00 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 2191)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-03-11 07:25:00 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 653)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.5ms | Allocations: 3469)
+  Rendered layout layouts/application.html.erb (Duration: 185.1ms | Allocations: 77490)
+Completed 200 OK in 196ms (Views: 190.4ms | ActiveRecord: 0.3ms | Allocations: 85242)
+
+
+Started GET "/users/sign_i" for 127.0.0.1 at 2024-03-11 07:25:05 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_i"):
+  
+Started GET "/users/sign_i" for 127.0.0.1 at 2024-03-11 07:27:08 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_i"):
+  
+Started GET "/rails/info/routes?path=dashboard" for 127.0.0.1 at 2024-03-11 07:27:13 +0800
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"dashboard"}
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2540)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActivity Sum (1.1ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+  [1m[36mActivity Sum (0.6ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActivity Sum (1.0ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+  [1m[36mActivity Sum (0.3ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+  [1m[36mActivity Sum (0.8ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "activities"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "activities" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "carbon_emission" integer, "type_id" integer NOT NULL, "value" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_activities_on_type_id" ON "activities" ("type_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_activities_on_user_id" ON "activities" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "activity_types"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "activity_types" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "climatiq_id" varchar, "climatiq_unit_of_measurement" varchar, "category" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "climatiq_unit_type" varchar)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "user_preferences"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "user_preferences" ("user_id" integer NOT NULL, "activity_type_id" integer NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_user_preferences_on_activity_type_id_and_user_id" ON "user_preferences" ("activity_type_id", "user_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_user_preferences_on_user_id_and_activity_type_id" ON "user_preferences" ("user_id", "activity_type_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactivities" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "carbon_emission" integer DEFAULT NULL, "type_id" integer NOT NULL, "value" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aactivities_on_user_id" ON "aactivities" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aactivities_on_type_id" ON "aactivities" ("type_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactivities" ("id","user_id","carbon_emission","type_id","value","created_at","updated_at")
+                     SELECT "id","user_id","carbon_emission","type_id","value","created_at","updated_at" FROM "activities"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "activities"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "activities" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "carbon_emission" integer DEFAULT NULL, "type_id" integer NOT NULL, "value" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_3a673f7980"
+FOREIGN KEY ("type_id")
+  REFERENCES "activity_types" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_activities_on_type_id" ON "activities" ("type_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_activities_on_user_id" ON "activities" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "activities" ("id","user_id","carbon_emission","type_id","value","created_at","updated_at")
+                     SELECT "id","user_id","carbon_emission","type_id","value","created_at","updated_at" FROM "aactivities"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aactivities"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactivities" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "carbon_emission" integer DEFAULT NULL, "type_id" integer NOT NULL, "value" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aactivities_on_user_id" ON "aactivities" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aactivities_on_type_id" ON "aactivities" ("type_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aactivities" ("id","user_id","carbon_emission","type_id","value","created_at","updated_at")
+                     SELECT "id","user_id","carbon_emission","type_id","value","created_at","updated_at" FROM "activities"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "activities"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "activities" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "carbon_emission" integer DEFAULT NULL, "type_id" integer NOT NULL, "value" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_3a673f7980"
+FOREIGN KEY ("type_id")
+  REFERENCES "activity_types" ("id")
+, CONSTRAINT "fk_rails_7e11bb717f"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_activities_on_type_id" ON "activities" ("type_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_activities_on_user_id" ON "activities" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "activities" ("id","user_id","carbon_emission","type_id","value","created_at","updated_at")
+                     SELECT "id","user_id","carbon_emission","type_id","value","created_at","updated_at" FROM "aactivities"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aactivities"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240310200847)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240221023032),
+(20240309090905),
+(20240309091414),
+(20240309092931),
+(20240310091448),
+(20240310095732);
+
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-03-10 23:52:59.536399"], ["updated_at", "2024-03-10 23:52:59.536399"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2024-03-10 23:52:59.539661"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "8d5c1815a3a72a7d6658d50450fabbca2de8ce03"], ["created_at", "2024-03-10 23:52:59.542787"], ["updated_at", "2024-03-10 23:52:59.542787"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActivity Sum (0.6ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+  [1m[36mActivity Sum (0.2ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."category" AS "activity_types_category" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."category"[0m
+  [1m[36mActivity Sum (0.3ms)[0m  [1m[34mSELECT SUM("activities"."carbon_emission") AS "sum_carbon_emission", "activity_types"."name" AS "activity_types_name" FROM "activities" INNER JOIN "activity_types" ON "activity_types"."id" = "activities"."type_id" GROUP BY "activity_types"."name"[0m
+  [1m[36mActivity Load (1.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[36mActivity Load (0.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  [1m[36mActivityType Load (4.6ms)[0m  [1m[34mSELECT "activity_types".* FROM "activity_types" WHERE "activity_types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]

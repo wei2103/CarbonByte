@@ -77,8 +77,10 @@ gem "tailwindcss-rails", "~> 2.3"
 
 gem 'httparty'
 
-gem 'stimulus-rails'
-
 gem "chartkick"
 
 gem 'rspec-rails', '~> 5.0.0'
+
+gem 'rails-controller-testing'
+
+gem 'factory_bot_rails', '~> 6.2'
