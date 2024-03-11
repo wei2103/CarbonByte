@@ -32,13 +32,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_10_200847) do
     t.string "climatiq_unit_type"
   end
 
-  create_table "user_preferences", id: false, force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "activity_type_id", null: false
-    t.index ["activity_type_id", "user_id"], name: "index_user_preferences_on_activity_type_id_and_user_id"
-    t.index ["user_id", "activity_type_id"], name: "index_user_preferences_on_user_id_and_activity_type_id"
-  end
-
   create_table "contents", force: :cascade do |t|
     t.integer "user_id"
     t.string "content_type"
@@ -49,6 +42,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_10_200847) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_preferences", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "activity_type_id", null: false
+    t.index ["activity_type_id", "user_id"], name: "index_user_preferences_on_activity_type_id_and_user_id"
+    t.index ["user_id", "activity_type_id"], name: "index_user_preferences_on_user_id_and_activity_type_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
