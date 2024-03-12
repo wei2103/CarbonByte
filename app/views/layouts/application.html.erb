@@ -13,10 +13,10 @@
   </head>
 
   <body>
-        <div>
-          <%= link_to 'Logout', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
-        </div>
     <main class="container mx-auto mt-28 px-5 flex flex-col">
+    <% if user_signed_in? %>
+        <%= render partial: 'layouts/navbar' %>
+      <% end %>
       <%= yield %>
     </main>
   </body>
