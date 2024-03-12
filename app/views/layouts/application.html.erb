@@ -13,10 +13,17 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex flex-col">
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
         <%= render partial: 'layouts/navbar' %>
       <% end %>
+    <main class="container mx-auto mt-28 px-5 flex flex-col">
+    <div class="flex flex-col items-center px-20">
+      <% flash.each do |type, msg| %>
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative custom-notice">
+        <%= msg %>
+        </div>
+      <% end %>
+      </div>
       <%= yield %>
     </main>
   </body>
