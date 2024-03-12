@@ -17,8 +17,8 @@ class EducationController < ApplicationController
     # Add current user id to content
     @content.user_id = current_user.id
 
-    if @content.save!
-      flash.alert = 'Content was successfully created.'
+    if @content.save
+      flash[:notice] = 'Content was successfully created.'
       redirect_to educational_content_path
     else
       # Put full error
