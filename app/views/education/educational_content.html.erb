@@ -1,5 +1,5 @@
 <div class="flex flex-col items-center px-20">
-<br>
+  <br>
   <h1 class="text-4xl"><strong>Educational Content</strong></h1>
   <br>
   <%= form_with(url: educational_content_path, method: 'get', local: true, class: 'mb-4') do %> 
@@ -16,17 +16,19 @@
 
 <br>
 
-<div class="py-8">
+<div class="border border-gray-300 p-4 rounded-lg bg-teal-50 border-2"> 
   <% if @videos.present? %>
     <div class="video-container">
       <% @videos.each do |video| %>
         <div class="video-box flex flex-col items-center px-20">
           <!-- Check if the content_link is present and it's a video link -->
-          <% if video.content_link.present? && video.content_type == 'video' %>
-            <div class="video-embed">
-              <%= raw("<iframe width='866' height='487' src='#{video.content_link}' frameborder='0' allowfullscreen></iframe>") %>
-            </div>
+          <% if video.content_link.attached? && video.content_type == 'video' %>
+            <video class="video-js" controls width="640" height="360">
+              <source src="<%= rails_blob_path(video.content_link, disposition: 'attachment') %>" type="<%= video.content_link.content_type %>">
+              Your browser does not support the video tag.
+            </video>
           <% end %>
+          <br>
           <p class="text-3xl"><strong><%= video.title %></strong></p>
           <p class="leading-loose"><%= video.description %></p>
           <br><br>
@@ -38,21 +40,23 @@
   <% end %>
 </div>
 
+
+
 <br><br>
 
-<div class="px-20 py-8">
+<div class="border border-gray-300 p-4 rounded-lg bg-teal-50 border-2">
   <% if @articles.present? %>
     <table>
       <tbody>
         <% @articles.each do |article| %>
           <tr>
             <td style="width: 40%;">
-              <% if article.content_link.present? %>
+              <% if article.content_link.attached? %>
                 <%= image_tag article.content_link, class: 'img-fluid', alt: article.title, style: 'width: 100%; height: auto;' %>
               <% end %>
             </td>
             <td class="pl-4" style="width: 60%;">
-              <p class="text-3xl"><strong><%= article.title %></strong></p>
+              <p class="text-3xl"><strong><%= article.title %></strong></p><br>
               <p class="leading-loose"><%= article.description %></p>
             </td>
           </tr>
@@ -67,18 +71,20 @@
   <% end %>
 </div>
 
+
 <br><br>
 
-<div class="px-20 py-8">
+<div class="border border-gray-300 p-4 rounded-lg bg-teal-50 border-2">
   <% if @infographics.present? %>
     <div class="infographic-container flex flex-col items-center px-20">
       <% @infographics.each do |infographic| %>
         <div class="text-center">
-          <% if infographic.content_link.present? %>
+          <% if infographic.content_link.attached? %>
             <%= image_tag infographic.content_link, class: 'img-fluid mx-auto', alt: infographic.title, style: 'width: 500px; height: 400px;' %>
           <% end %>
         </div>
-        <p class="text-3xl"><strong><%= infographic.title %></strong></p>
+        <br>
+        <p class="text-3xl"><strong><%= infographic.title %></strong></p><br>
         <p class="leading-loose"><%= infographic.description %></p>
         <br><br>
       <% end %>

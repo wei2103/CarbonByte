@@ -49,11 +49,14 @@ class DashboardController < ApplicationController
 
     @all_goals.each do |goal|
       activities_for_goal = Activity.where("DATE(created_at) = ?", goal.target_completion_date)
-      total_carbon_emission_for_goal = activities_for_goal.sum(:carbon_emission)
-      
-      if total_carbon_emission_for_goal <= goal.carbon_emission
-        flash[:notice] = 'Congratulations! You have completed a goal.'
-        @completed_goals << { goal: goal, completion_date: goal.target_completion_date }
+    
+      if activities_for_goal.present? # Check if there are any activities for the goal's target completion date
+        total_carbon_emission_for_goal = activities_for_goal.sum(:carbon_emission)
+        
+        if total_carbon_emission_for_goal <= goal.carbon_emission
+          flash[:notice] = 'Congratulations! You have completed a goal.'
+          @completed_goals << { goal: goal, completion_date: goal.target_completion_date }
+        end
       end
     end
 
