@@ -55,8 +55,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_06_091307) do
   end
 
   create_table "replies", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_replies_on_post_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
   create_table "user_preferences", id: false, force: :cascade do |t|
@@ -84,4 +89,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_06_091307) do
   add_foreign_key "activities", "users"
   add_foreign_key "contents", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "replies", "posts"
+  add_foreign_key "replies", "users"
 end
