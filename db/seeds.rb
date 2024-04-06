@@ -96,3 +96,85 @@ Content.create(
   description: 'Global carbon emissions from fossil fuels have significantly increased since 1900. Since 1970, CO2 emissions have increased by about 90%, with emissions from fossil fuel combustion and industrial processes contributing about 78% of the total greenhouse gas emissions increase from 1970 to 2011. Agriculture, deforestation, and other land-use changes have been the second-largest contributors.[1]
   Emissions of non-CO2 greenhouse gases have also increased significantly since 1900. To learn more about past and projected global emissions of non-CO2 gases, please see the EPA report, Global Anthropogenic Non-CO2 Greenhouse Gas Emissions: 1990-2020.'
 )
+
+# activity_type_1 = ActivityType.create(name: 'Motorcycle', category: 'Transport', climatiq_unit_of_measurement: 'km')
+# activity_type_2 = ActivityType.create(name: 'Car', category: 'Transport', climatiq_unit_of_measurement: 'km')
+# activity_type_3 = ActivityType.create(name: 'Fresh Fruit', category: 'Food', climatiq_unit_of_measurement: 't')
+# activity_type_4 = ActivityType.create(name: 'Car', category: 'Transport', climatiq_unit_of_measurement: 'km')
+# activity_type_5 = ActivityType.create(name: 'Fresh Fruit', category: 'Food', climatiq_unit_of_measurement: 't')
+# activity_type_6 = ActivityType.create(name: 'Car', category: 'Transport', climatiq_unit_of_measurement: 'km')
+# activity_type_7 = ActivityType.create(name: 'Fresh Fruit', category: 'Food', climatiq_unit_of_measurement: 't')
+
+# Create mock Activities associated with ActivityTypes
+# Activity.create([
+#   { user_id: 4, carbon_emission: 134, type_id: 1, value: 10, created_at: Time.now - 1.day, updated_at: Time.now - 1.day },
+#   { user_id: 4, carbon_emission: 15, type_id: 3, value: 34, created_at: Time.now - 2.days, updated_at: Time.now - 2.days },
+#   { user_id: 4, carbon_emission: 50, type_id: 4, value: 5, created_at: Time.now - 3.days, updated_at: Time.now - 3.days },
+#   { user_id: 4, carbon_emission: 150, type_id: 3, value: 188 created_at: Time.now - 4.days, updated_at: Time.now - 4.days },
+#   { user_id: 4, carbon_emission: 44, type_id: 4, value: 4, created_at: Time.now - 5.days, updated_at: Time.now - 5.days },
+#   { user_id: 4, carbon_emission: 66, type_id: 3, value: 16, created_at: Time.now - 6.days, updated_at: Time.now - 5.days },
+#   { user_id: 4, arbon_emission: 22, type_id: 4, value: 1, created_at: Time.now - 7.days, updated_at: Time.now - 5.days  },
+# ])
+
+Activity.create(
+  user_id: 4,
+  carbon_emission: 134,
+  type_id: 1,
+  value: 10,
+  created_at: Time.now - 1.day,
+  updated_at: Time.now - 1.day
+)
+
+Activity.create(
+  user_id: 4,
+  carbon_emission: 15,
+  type_id: 3,
+  value: 34,
+  created_at: Time.now - 2.days,
+  updated_at: Time.now - 2.days
+)
+
+Activity.create(
+  user_id: 4,
+  carbon_emission: 50,
+  type_id: 4,
+  value: 5,
+  created_at: Time.now - 3.days,
+  updated_at: Time.now - 3.days
+)
+
+Activity.create(
+  user_id: 4,
+  carbon_emission: 150,
+  type_id: 3,
+  value: 188,
+  created_at: Time.now - 4.days,
+  updated_at: Time.now - 4.days
+)
+
+Activity.create(
+  user_id: 4,
+  carbon_emission: 44,
+  type_id: 4,
+  value: 4,
+  created_at: Time.now - 5.days,
+  updated_at: Time.now - 5.days
+)
+
+Activity.create(
+  user_id: 4,
+  carbon_emission: 66,
+  type_id: 3,
+  value: 16,
+  created_at: Time.now - 6.days,
+  updated_at: Time.now - 6.days
+)
+
+Activity.create(
+  user_id: 4,
+  carbon_emission: 22,
+  type_id: 4,
+  value: 1,
+  created_at: Time.now - 7.days,
+  updated_at: Time.now - 7.days
+)

@@ -22,5 +22,99 @@
       <p>No data available.</p>
     <% end %>
   </div>
+<br>
+<br>
+<br>
+
+<div class="flex justify-center">
+<div class="flex justify-center border border-gray-300 p-4 rounded-lg bg-teal-50 border-2">
+  <form action="<%= dashboard_index_path %>" method="get" class="text-center">
+    <label for="goal_label" class="text-4xl font-bold underline">Set Goal For Historical Tracking</label><br><br><br>
+    <label for="less_carbon" class="font-bold text-gray-400">(Goal completes if the sum of carbon emission of that day is less than your sum of carbon emission)</label><br><br><br>
+    <label for="target_date" class="font-bold">Target Completion Date:</label>
+    <input type="date" id="target_completion_date" name="target_completion_date">
+    <br>
+    <br>
+    <br>
+    <label for="sum_carbon_emission" class="font-bold">Sum of Carbon Emission (co2e):</label>
+    <input type="number" id="sum_carbon" name="sum_carbon">
+    <br>
+    <br>
+    <% if @errorsForGoal.any? %>
+        <div class="text-red-500">
+          <% @errorsForGoal.each do |error| %>
+            <%= error %><br>
+          <% end %>
+        </div>
+      <% end %>
+      <br>
+    <input type="submit" value="Add Goal" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  </form>
 </div>
+</div>
+
+<div class="flex justify-center">
+<div class="flex justify-center border border-gray-300 p-4 rounded-lg bg-teal-50 border-2">
+  <div class="goals-container">
+    <h2 class="font-bold text-4xl text-center underline">Your Goals List</h2><br><br>
+    <% if @all_goals.any? %>
+      <ul>
+        <% @all_goals.each_with_index do |goal, index| %>
+          <li>
+            <p class="font-bold underline">Goal List <%= index + 1 %>:</p>
+            <p class="font-bold">Target Completion Date: <%= goal.target_completion_date %></p>
+            <p class="font-bold">Sum of Carbon Emission (co2e): <%= goal.carbon_emission %></p><br>
+            <% if @completed_goals.any? { |completed_goal| completed_goal[:goal].id == goal.id } %>
+              <% completed_goal = @completed_goals.find { |cg| cg[:goal].id == goal.id } %>
+              <p class="font-bold text-green-500">The sum of carbon emission on <%= goal.target_completion_date %> is <%= completed_goal[:total_carbon_emission_for_goal] %> (co2e) which is less than <%= goal.carbon_emission %> (co2e).<br>Congratulations! You completed your goal on <%= goal.target_completion_date %>.</p>
+            <% end %>
+          </li>
+          <br><br>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="font-bold text-xl text-center text-gray-400">Your goals list is still empty.</p>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<div class="flex justify-center">
+<div class="flex justify-center border border-gray-300 p-4 rounded-lg bg-teal-50 border-2">
+  <form action="<%= dashboard_index_path %>" method="get" class="text-center">
+    <label for="historical_date" class="text-4xl font-bold underline">Select a specific time range</label><br><br><br>
+    <label for="start_date" class="font-bold">Start Date:</label>
+    <input type="date" id="start_date" name="start_date">
+    <br>
+    <br>
+    <label for="end_date" class="font-bold">End Date:</label>&nbsp&nbsp
+    <input type="date" id="end_date" name="end_date">
+    <br>
+    <br>
+    <% if @errorsForTimeRange.any? %>
+      <div class="text-red-500">
+        <% @errorsForTimeRange.each do |error| %>
+          <%= error %><br>
+        <% end %>
+      </div>
+    <% end %>
+    <input type="submit" value="Show Historical Data" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-4">
+  </form>
+</div>
+</div>
+
+
+
+
+<div class="flex flex-col items-center gap-5">
+  <p class="text-left font-bold text-4xl underline">Historical Carbon Footprint Trends (co2e)</p>
+    <% if @carbon_emission_by_day_of_week_and_category.any? %>
+      <%= column_chart @carbon_emission_by_day_of_week_and_category, library: { title: { text: 'Historical Carbon Footprint Trends)' } } %>
+    <% else %>
+      <p class="font-bold text-2xl">No historical data available.</p>
+      <p class="text-left text-red-500 font-bold">*Please update your activities regularly for a comprehensive historical record.</p>
+      <%= link_to 'Log Activity Now', user_path(current_user.id), class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm text-center' %><br><br>
+    <% end %>
+</div>
+
 

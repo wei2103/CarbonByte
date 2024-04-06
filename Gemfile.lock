@@ -105,6 +105,8 @@ GEM
       railties (>= 5.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    groupdate (6.4.0)
+      activesupport (>= 6.1)
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -276,6 +278,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9)
   factory_bot_rails (~> 6.2)
+  groupdate
   httparty
   importmap-rails
   jbuilder

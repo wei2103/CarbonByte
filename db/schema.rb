@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_10_200847) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_06_033020) do
   create_table "activities", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "carbon_emission"
@@ -42,6 +42,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_10_200847) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "goals", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.date "target_completion_date"
+    t.integer "carbon_emission"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
+  end
+
   create_table "user_preferences", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "activity_type_id", null: false
@@ -66,4 +75,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_10_200847) do
   add_foreign_key "activities", "activity_types", column: "type_id"
   add_foreign_key "activities", "users"
   add_foreign_key "contents", "users"
+  add_foreign_key "goals", "users"
 end
