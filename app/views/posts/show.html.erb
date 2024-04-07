@@ -27,7 +27,7 @@
             <li class="flex flex-row gap-3">
               <%= image_tag "help-logo.png", alt: "Help University logo", class: "rounded-full w-10 h-10" %>
               <div>
-                <%= link_to @post.user.username, user_path(@post.user), class: 'font-bold' %>
+                <%= link_to reply.user.username, user_path(reply.user), class: 'font-bold' %>
                 <p><%= reply.message %></p>
                 <p class="text-xs text-[#65676b]"><%= time_ago_in_words(reply.created_at) %></p>
               </div>
