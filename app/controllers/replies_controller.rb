@@ -3,10 +3,11 @@ class RepliesController < ApplicationController
     @post = Post.find(params[:post_id])
     puts params["message"]
     @reply = @post.replies.new(message: params[:reply][:message])
-    if @reply.save!
+    if @reply.save
       redirect_to @post, notice: 'Reply was successfully created.'
     else
-      render 'posts/show'
+      # If the reply is not saved, it will show an error message
+      redirect_to @post, notice: "Reply was not saved. #{@reply.errors.full_messages[0]}."
     end
   end
 
