@@ -14,14 +14,24 @@
     </div>
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
       <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li class="block py-2 px-3 rounded hover:text-blue-700 dark:hover:text-blue-500 <%= 'bg-blue-700 text-white' if current_page?(root_path) %>"><%= link_to 'Home', root_path %></li>
-        <li class="block py-2 px-3 rounded hover:text-blue-700 dark:hover:text-blue-500 <%= 'bg-blue-700 text-white' if current_page?(educational_content_path) %>"><%= link_to 'Education', educational_content_path %></li>
-        <li class="block py-2 px-3 rounded hover:text-blue-700 dark:hover:text-blue-500 <%= 'bg-blue-700 text-white' if current_page?(root_path) %>"><%= link_to 'Community', root_path %></li>
-        <li class="block py-2 px-3 rounded hover:text-blue-700 dark:hover:text-blue-500 <%= 'bg-blue-700 text-white' if current_page?(user_path(current_user.id)) %>"><%= link_to 'Profile', user_path(current_user.id) %></li>
-        <li class="block py-2 px-3 rounded hover:text-blue-700 dark:hover:text-blue-500 <%= 'bg-blue-700 text-white' if current_page?(new_education_path) && current_user&.admin? %>"><%= link_to 'UploadContent', new_education_path if current_user&.admin? %></li>
+        <li class="block py-2 px-3 rounded hover:text-blue-700 dark:hover:text-blue-500 <%= 'bg-blue-700 text-white' if @active_page == 'home' %>">
+          <%= link_to 'Home', root_path %>
+        </li>
+        <li class="block py-2 px-3 rounded hover:text-blue-700 dark:hover:text-blue-500 <%= 'bg-blue-700 text-white' if @active_page == 'education' %>">
+          <%= link_to 'Education', educational_content_path %>
+        </li>
+        <li class="block py-2 px-3 rounded hover:text-blue-700 dark:hover:text-blue-500 <%= 'bg-blue-700 text-white' if @active_page == 'community' %>">
+          <%= link_to 'Community', root_path %>
+        </li>
+        <li class="block py-2 px-3 rounded hover:text-blue-700 dark:hover:text-blue-500 <%= 'bg-blue-700 text-white' if @active_page == 'profile' %>">
+          <%= link_to 'Profile', user_path(current_user.id) %>
+        </li>
+        <li class="block py-2 px-3 rounded hover:text-blue-700 dark:hover:text-blue-500 <%= 'bg-blue-700 text-white' if @active_page == 'upload_content' %>">
+          <%= link_to 'UploadContent', new_education_path if current_user&.admin? %>
+        </li>
         <li class="block py-2 px-3 rounded">
           <% if user_signed_in? %>
-          <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'hover:text-blue-700 dark:hover:text-blue-500'  %>
+            <%= link_to 'Logout', destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'hover:text-blue-700 dark:hover:text-blue-500' %>
           <% else %>
             <%= link_to 'Login', new_user_session_path, class: 'hover:text-blue-700 dark:hover:text-blue-500' %>
           <% end %>

@@ -5,6 +5,7 @@ class EducationController < ApplicationController
     @videos = Content.where(content_type: 'video')
     @articles = Content.where(content_type: 'article')
     @infographics = Content.where(content_type: 'infographic')
+    @active_page = 'education'
   end
 
   def new

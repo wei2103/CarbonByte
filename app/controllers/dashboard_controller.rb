@@ -5,6 +5,7 @@ class DashboardController < ApplicationController
     @activities = Activity.all
     @errorsForGoal = [] 
     @errorsForTimeRange = []
+    @active_page = 'home'
 
     start_date = params[:start_date].present? ? params[:start_date].to_date : 7.days.ago.to_date
     end_date = params[:end_date].present? ? params[:end_date].to_date : Time.current.to_date
