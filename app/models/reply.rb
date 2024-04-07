@@ -1,7 +1,8 @@
 class Reply < ApplicationRecord
-  # belongs_to :user
+  belongs_to :user
   belongs_to :post
   validates :message, presence: true
+
 
   # If the text limit over 280 characters, it will truncate the message and add ... at the end
   before_save :truncate_message

@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
 
-  # has_many :replies, dependent: :destroy
+  has_many :replies, dependent: :destroy
 
   accepts_nested_attributes_for :preferences  # If you need nested attributes for user preferences
 
