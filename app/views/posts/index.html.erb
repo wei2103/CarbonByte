@@ -16,7 +16,7 @@
   </div>
 
   <div class="flex flex-col gap-6">
-    <% @posts.each do |post| %>
+    <% @posts.reverse.each do |post| %>
       <div class="post bg-white rounded-md p-4 flex flex-col gap-3">
         <div class="flex flex-row gap-2">
           <%= image_tag "help-logo.png", alt: "Help University logo", class: "rounded-full w-10 h-10" %>
