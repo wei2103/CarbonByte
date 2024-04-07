@@ -10,6 +10,7 @@ class EducationController < ApplicationController
 
   def new
     @content = Content.new
+    @active_page = 'upload_content'
   end
 
   def create
