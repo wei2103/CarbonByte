@@ -1,0 +1,25 @@
+<div class="max-w-lg w-full	flex flex-col align-middle flex-wrap">
+  <div class="flex flex-col gap-6">
+    <div class="post bg-white rounded-md p-4 flex flex-col gap-3">
+      <div class="flex flex-row gap-2">
+        <%= image_tag "help-logo.png", alt: "Help University logo", class: "rounded-full w-10 h-10" %>
+        <div>
+          <%= link_to @post.user.username, user_path(@post.user), class: 'font-bold' %>
+          <p class="text-xs text-[#65676b]"><%= time_ago_in_words(@post.created_at) %></p>
+        </div>
+      </div>
+      <div>
+        <strong><h2 class="text-lg"><%= @post.title %></h2></strong>
+        <p><%= @post.description %></p>
+      </div>
+      <%= link_to 'View Comment', post_path(@post), class:'bg-blue-500 text-sm py-2 px-5 font-bold text-white text-center' %>
+      # Create reply form
+      <%= form_with model: [ @post, @post.replies.build ], local: true do |form| %>
+        <div class="flex flex-col gap-3">
+          <%= form.text_area :body, class: 'border border-gray-300 rounded-md p-2', placeholder: 'Reply to this post' %>
+          <%= form.submit 'Reply', class: 'bg-blue-500 text-sm py-2 px-5 font-bold text-white text-center' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
