@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resources :activity_types, only: [:show]
   resources :dashboard, only: [:index]
   resources :posts, only: [:index, :show, :new, :create]
-  resources :replies, only: [:create]
+  resources :posts do
+    resources :replies, only: [:create]
+  end
 
   get '/education/educational_content', to: 'education#educational_content', as: 'educational_content'
   # get '/education/new', to: 'education#new', as: 'new'
