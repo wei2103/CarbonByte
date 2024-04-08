@@ -86,3 +86,10 @@ gem 'rails-controller-testing'
 gem 'factory_bot_rails', '~> 6.2'
 
 gem 'groupdate'
+
+gem 'httparty'
+
+gem "ruby-openai"
+
+
+

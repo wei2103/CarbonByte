@@ -1,3 +1,4 @@
+
 <div class="flex flex-col gap-12 md:gap-16">
   <div class="flex gap-5 flex-col">
     <p class="text-left font-bold">Carbon Emission by Activity Type (co2e)</p>
@@ -22,6 +23,13 @@
       <p>No data available.</p>
     <% end %>
   </div>
+
+  <div class="flex flex-col gap-12 md:gap-16">
+    <div class="flex gap-5 flex-col">
+      <p class="text-left font-bold">Personalized Recommendation Article</p>
+      <p> We provide every user a personal solution ! <br></p>
+      <p> <%= @response %> </p>
+    </div>
 <br>
 <br>
 <br>
@@ -116,5 +124,4 @@
       <%= link_to 'Log Activity Now', user_path(current_user.id), class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-sm text-center' %><br><br>
     <% end %>
 </div>
-
-
+</div>>

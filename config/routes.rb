@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   get 'goals/index'
   get 'activity_types/show'
+  get '/download_csv', to: 'your_controller#download_csv'
+
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
   # Defines the root path route ("/")
   root "dashboard#index"
 

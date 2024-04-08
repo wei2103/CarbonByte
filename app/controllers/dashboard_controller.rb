@@ -1,9 +1,14 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
-
+  require 'csv'
   def index
+    @chat_bot = ChatBotService.new
+    csv_content = @carbon_emissions_by_activity_type
+    puts csv_content
+    @prompt = " analyse and provide concise insight, meaningful data on carbon emissions from different activities and categories. this data includes the total carbon emissions (in CO2e units) Here's a summary of the data: \n\n #{csv_content} \n\n Could you analyze this data and provide insights on the following aspects:1. Which activity types or categories contribute the most to carbon emissions?2. Are there any notable trends or patterns in the data?3. Can you identify any correlations between different activity types or categories?4. Based on the data, what actionable steps can be taken to reduce carbon emissions in each category?5. Any other insights or observations you can provide based on the data analysis would be greatly appreciated.\n\n with the above information, could you provide a detailed analysis and insights on the data with 350 words? make sure your input are line by line and seperate to paragraphs"
+    @response = @chat_bot.start_chat(@prompt)
     @activities = Activity.all
-    @errorsForGoal = [] 
+    @errorsForGoal = []
     @errorsForTimeRange = []
 
     start_date = params[:start_date].present? ? params[:start_date].to_date : 7.days.ago.to_date
@@ -82,6 +87,24 @@ class DashboardController < ApplicationController
     if @carbon_emission_by_day_of_week_and_category.empty?
       flash.now[:notice] = 'No historical data available. Please update your activities regularly for a comprehensive historical record.'
     end
-     
+  end
+  def generate_csv(data, file_path)
+    CSV.open(file_path, 'wb') do |csv|
+      # Write header row
+      csv << ['Activity Type', 'Total Carbon Emission']
+
+      # Check if data is nil or empty
+      if data.nil? || data.empty?
+        csv << ['No data available']
+      else
+        # Iterate over data and write rows
+        data.each do |activity_type, carbon_emission|
+          csv << [activity_type, carbon_emission]
+        end
+      end
+    end
+    puts "CSV file has been created: #{file_path}"
   end
 end
+
+
