@@ -21,7 +21,6 @@
     <div class="video-container">
       <% @videos.each do |video| %>
         <div class="video-box flex flex-col items-center px-20">
-          <!-- Check if the content_link is present and it's a video link -->
           <% if video.content_link.attached? && video.content_type == 'video' %>
             <video class="video-js" controls width="640" height="360">
               <source src="<%= rails_blob_path(video.content_link, disposition: 'attachment') %>" type="<%= video.content_link.content_type %>">
@@ -39,8 +38,6 @@
     <p>No videos available</p>
   <% end %>
 </div>
-
-
 
 <br><br>
 
@@ -70,7 +67,6 @@
     <p>No articles available</p>
   <% end %>
 </div>
-
 
 <br><br>
 
