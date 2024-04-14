@@ -15,18 +15,14 @@ class EducationController < ApplicationController
 
   def create
     @content = Content.new(content_params)
-
-    # Add current user id to content
     @content.user_id = current_user.id
 
     if @content.save
       flash[:notice] = 'Content was successfully created.'
       redirect_to educational_content_path
     else
-      # Put full error
       puts @content.errors.full_messages
       render :new
-
     end
   end
 
@@ -47,8 +43,6 @@ class EducationController < ApplicationController
   end
 
   def is_admin?
-    # check if user is a admin
-    # if not admin then redirect to where ever you want
     redirect_to educational_content_path unless current_user.admin?
   end
 end

@@ -8,62 +8,62 @@
 # db/seeds/activity_types.rb
 
 # Seed data for activity types
-activity_types_data = [
-  {
-    name: "Motorcycle",
-    climatiq_id: "passenger_vehicle-vehicle_type_motorcycle-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
-    climatiq_unit_of_measurement: "km",
-    climatiq_unit_type: "distance",
-    category: "transport"
-  },
-  {
-    name: "Bus",
-    climatiq_id: "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
-    climatiq_unit_of_measurement: "usd",
-    climatiq_unit_type: "money",
-    category: "transport"
-  },
-  {
-    name: "Car",
-    climatiq_id: "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
-    climatiq_unit_of_measurement: "km",
-    climatiq_unit_type: "distance",
-    category: "transport"
-  },
-  {
-    name: "Fresh Fruit",
-    climatiq_id: "consumer_goods-type_fruit_fresh",
-    climatiq_unit_of_measurement: "t",
-    climatiq_unit_type: "weight",
-    category: "food"
-  },
-  {
-    name: "Beef",
-    climatiq_id: "consumer_goods-type_meat_products_beef",
-    climatiq_unit_of_measurement: "usd",
-    climatiq_unit_type: "money",
-    category: "food"
-  },
-  {
-    name: "Dairy Products",
-    climatiq_id: "consumer_goods-type_dairy_products",
-    climatiq_unit_of_measurement: "usd",
-    climatiq_unit_type: "money",
-    category: "food"
-  },
-  {
-    name: "Electricity",
-    climatiq_id: "electricity-supply_grid-source_supplier_mix",
-    climatiq_unit_of_measurement: "kWh",
-    climatiq_unit_type: "energy",
-    category: "energy"
-  }
-]
+# activity_types_data = [
+#   {
+#     name: "Motorcycle",
+#     climatiq_id: "passenger_vehicle-vehicle_type_motorcycle-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
+#     climatiq_unit_of_measurement: "km",
+#     climatiq_unit_type: "distance",
+#     category: "transport"
+#   },
+#   {
+#     name: "Bus",
+#     climatiq_id: "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
+#     climatiq_unit_of_measurement: "usd",
+#     climatiq_unit_type: "money",
+#     category: "transport"
+#   },
+#   {
+#     name: "Car",
+#     climatiq_id: "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
+#     climatiq_unit_of_measurement: "km",
+#     climatiq_unit_type: "distance",
+#     category: "transport"
+#   },
+#   {
+#     name: "Fresh Fruit",
+#     climatiq_id: "consumer_goods-type_fruit_fresh",
+#     climatiq_unit_of_measurement: "t",
+#     climatiq_unit_type: "weight",
+#     category: "food"
+#   },
+#   {
+#     name: "Beef",
+#     climatiq_id: "consumer_goods-type_meat_products_beef",
+#     climatiq_unit_of_measurement: "usd",
+#     climatiq_unit_type: "money",
+#     category: "food"
+#   },
+#   {
+#     name: "Dairy Products",
+#     climatiq_id: "consumer_goods-type_dairy_products",
+#     climatiq_unit_of_measurement: "usd",
+#     climatiq_unit_type: "money",
+#     category: "food"
+#   },
+#   {
+#     name: "Electricity",
+#     climatiq_id: "electricity-supply_grid-source_supplier_mix",
+#     climatiq_unit_of_measurement: "kWh",
+#     climatiq_unit_type: "energy",
+#     category: "energy"
+#   }
+# ]
 
-# Create ActivityType records
-activity_types_data.each do |activity_type_data|
-  ActivityType.create!(activity_type_data)
-end
+# # Create ActivityType records
+# activity_types_data.each do |activity_type_data|
+#   ActivityType.create!(activity_type_data)
+# end
 
 #admin_user = User.create(email: 'admin@example.com', password: 'password', admin: true)
 user = User.create(email: 'user@example.com', password: 'password')
