@@ -80,7 +80,7 @@ class DashboardController < ApplicationController
 
     @carbon_emissions_by_category = Activity.where(user_id: current_user.id).group("activity_types.category").joins(:activity_type).sum(:carbon_emission)
 
-    @carbon_emission_by_day_of_week_and_category = Activity.joins(:activity_type)
+    @carbon_emission_by_day_of_week_and_category = Activity.where(user_id: current_user.id).joins(:activity_type)
     .where(created_at: start_date.beginning_of_day..end_date.end_of_day)
     .group("DATE_TRUNC('day', activities.created_at)::date", "activity_types.category", "activity_types.name")
     .sum(:carbon_emission)
