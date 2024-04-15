@@ -1,29 +1,37 @@
-<h1>Welcome to the App</h1>
+<div class="max-w-lg mx-auto">
+  <!-- Add descriptive headline and description -->
+  <h1 class="text-3xl font-bold mb-4">Set Your Preferences</h1>
+  <p class="text-gray-600 mb-8">Please select your preferences below to get started. You can customize your preferences for different categories.</p>
 
-<%= form_tag preferences_path, method: :post do %>
-  <!-- Include CSRF token for security -->
-  <%= csrf_meta_tags %>
+  <!-- Your existing form content -->
+  <%= form_tag preferences_path, method: :post, class: "mb-8" do %>
+    <!-- Include CSRF token for security -->
+    <%= csrf_meta_tags %>
 
-  <% ["transport", "energy", "food"].each do |category| %>
-    <h3><strong><%= category.capitalize %></strong></h3>
-    <% ActivityType.where(category: category).each_with_index do |activity_type, index| %>
-      <% checked = category == "energy" && index.zero? %>
-      <% disabled = checked ? true : false %>
-      <% checkbox_options = { checked: checked, disabled: disabled } %>
-      <label>
-        <%= check_box_tag 'user[preference_ids][]', activity_type.id, checked, checkbox_options %>
-        <%= activity_type.name %>
-      </label><br>
-      <% if disabled %>
-        <!-- Hidden field to submit disabled activity ID -->
-        <%= hidden_field_tag 'user[preference_ids][]', activity_type.id %>
-      <% end %>
+    <% ["transport", "energy", "food"].each do |category| %>
+      <div class="mb-4">
+        <h3 class="text-lg font-semibold mb-2"><%= category.capitalize %></h3>
+        <% ActivityType.where(category: category).each_with_index do |activity_type, index| %>
+          <% checked = category == "energy" && index.zero? %>
+          <% disabled = checked ? "opacity-50 cursor-not-allowed" : "" %>
+          <% checkbox_options = { checked: checked, class: "mr-2 h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" } %>
+          <label class="flex items-center">
+            <%= check_box_tag 'user[preference_ids][]', activity_type.id, checked, checkbox_options %>
+            <span class="<%= disabled %>"><%= activity_type.name %></span>
+          </label>
+          <% if disabled.present? %>
+            <!-- Hidden field to submit disabled activity ID -->
+            <%= hidden_field_tag 'user[preference_ids][]', activity_type.id %>
+          <% end %>
+          <br>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
 
-  <!-- Add a submit button -->
-  <%= submit_tag "Save Preferences" %>
-<% end %>
+    <!-- Add a submit button with Tailwind styling -->
+    <%= submit_tag "Save Preferences", class: "bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+  <% end %>
+</div>
 
 
 
