@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @posts = Post.all
 
     @post = Post.new
+    @active_page = 'community'
   end
 
   def show
