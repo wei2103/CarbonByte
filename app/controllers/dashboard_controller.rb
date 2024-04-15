@@ -6,7 +6,7 @@ class DashboardController < ApplicationController
     csv_content = @carbon_emissions_by_activity_type
     puts csv_content
     @prompt = " analyse and provide concise insight, meaningful data on carbon emissions from different activities and categories. this data includes the total carbon emissions (in CO2e units) Here's a summary of the data: \n\n #{csv_content} \n\n Could you analyze this data and provide insights on the following aspects:1. Which activity types or categories contribute the most to carbon emissions?2. Are there any notable trends or patterns in the data?3. Can you identify any correlations between different activity types or categories?4. Based on the data, what actionable steps can be taken to reduce carbon emissions in each category?5. Any other insights or observations you can provide based on the data analysis would be greatly appreciated.\n\n with the above information, could you provide a detailed analysis and insights on the data with 350 words? make sure your input are line by line and seperate to paragraphs"
-    @response = @chat_bot.start_chat(@prompt)
+    # @response = @chat_bot.start_chat(@prompt)
     @activities = Activity.all
     @errorsForGoal = []
     @errorsForTimeRange = []
@@ -78,12 +78,12 @@ class DashboardController < ApplicationController
 
     @carbon_emissions_by_activity_type = Activity.where(user_id: current_user.id).group("activity_types.name").joins(:activity_type).sum(:carbon_emission)
 
-    @carbon_emissions_by_category = Activity.group("activity_types.category").joins(:activity_type).sum(:carbon_emission)
+    @carbon_emissions_by_category = Activity.where(user_id: current_user.id).group("activity_types.category").joins(:activity_type).sum(:carbon_emission)
 
     @carbon_emission_by_day_of_week_and_category = Activity.joins(:activity_type)
-      .where("activities.created_at" => start_date.beginning_of_day..end_date.end_of_day)
-      .group("strftime('%Y-%m-%d', activities.created_at)", "activity_types.category", "activity_types.name")
-      .sum(:carbon_emission)
+    .where(created_at: start_date.beginning_of_day..end_date.end_of_day)
+    .group("DATE_TRUNC('day', activities.created_at)::date", "activity_types.category", "activity_types.name")
+    .sum(:carbon_emission)
 
     if @carbon_emission_by_day_of_week_and_category.empty?
       flash.now[:notice] = 'No historical data available. Please update your activities regularly for a comprehensive historical record.'
