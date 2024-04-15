@@ -3,9 +3,11 @@ class DashboardController < ApplicationController
   require 'csv'
   def index
     @chat_bot = ChatBotService.new
+    @carbon_emissions_by_activity_type = Activity.where(user_id: current_user.id).group("activity_types.name").joins(:activity_type).sum(:carbon_emission)
     csv_content = @carbon_emissions_by_activity_type
+    puts (@carbon_emissions_by_activity_type.to_s + "testing")
     puts csv_content
-    @prompt = " analyse and provide concise insight, meaningful data on carbon emissions from different activities and categories. this data includes the total carbon emissions (in CO2e units) Here's a summary of the data: \n\n #{csv_content} \n\n Could you analyze this data and provide insights on the following aspects:1. Which activity types or categories contribute the most to carbon emissions?2. Are there any notable trends or patterns in the data?3. Can you identify any correlations between different activity types or categories?4. Based on the data, what actionable steps can be taken to reduce carbon emissions in each category?5. Any other insights or observations you can provide based on the data analysis would be greatly appreciated.\n\n with the above information, could you provide a detailed analysis and insights on the data with 350 words? make sure your input are line by line and seperate to paragraphs"
+    @prompt = " if there's no data, output 'No Data Available'. if there is data, analyse and provide concise insight, meaningful data on carbon emissions from different activities and categories. this data includes the total carbon emissions (in CO2e units) Here's a summary of the data: \n\n #{csv_content} \n\n Could you analyze this data and provide insights on the following aspects:1. Which activity types or categories contribute the most to carbon emissions?2. Are there any notable trends or patterns in the data?3. Can you identify any correlations between different activity types or categories?4. Based on the data, what actionable steps can be taken to reduce carbon emissions in each category?5. Any other insights or observations you can provide based on the data analysis would be greatly appreciated.\n\n with the above information, could you provide a detailed analysis and insights on the data with 350 words? make sure your input are line by line and seperate to paragraphs"
     @response = @chat_bot.start_chat(@prompt)
     @activities = Activity.all
     @errorsForGoal = []
