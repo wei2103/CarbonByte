@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   has_and_belongs_to_many :preferences, class_name: 'ActivityType', join_table: :user_preferences
+  has_many :goals, dependent: :destroy
 
   has_many :activities, dependent: :destroy
 

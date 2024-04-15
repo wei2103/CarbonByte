@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_04_06_141033) do
+<<<<<<< HEAD
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +20,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_06_141033) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
+=======
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
+>>>>>>> main
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -37,7 +45,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_06_141033) do
   end
 
   create_table "active_storage_variant_records", force: :cascade do |t|
+<<<<<<< HEAD
     t.bigint "blob_id", null: false
+=======
+    t.integer "blob_id", null: false
+>>>>>>> main
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
@@ -74,7 +86,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_06_141033) do
   end
 
   create_table "goals", force: :cascade do |t|
+<<<<<<< HEAD
     t.bigint "user_id", null: false
+=======
+    t.integer "user_id", null: false
+>>>>>>> main
     t.date "target_completion_date"
     t.integer "carbon_emission"
     t.datetime "created_at", null: false
@@ -82,6 +98,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_06_141033) do
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
+<<<<<<< HEAD
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -100,6 +117,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_06_141033) do
     t.index ["post_id"], name: "index_replies_on_post_id"
   end
 
+=======
+>>>>>>> main
   create_table "user_preferences", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "activity_type_id", null: false
@@ -127,7 +146,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_06_141033) do
   add_foreign_key "activities", "users"
   add_foreign_key "contents", "users"
   add_foreign_key "goals", "users"
+<<<<<<< HEAD
   add_foreign_key "posts", "users"
   add_foreign_key "replies", "posts"
   add_foreign_key "replies", "users"
+=======
+>>>>>>> main
 end

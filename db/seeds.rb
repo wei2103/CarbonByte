@@ -8,66 +8,67 @@
 # db/seeds/activity_types.rb
 
 # Seed data for activity types
-activity_types_data = [
-  {
-    name: "Motorcycle",
-    climatiq_id: "passenger_vehicle-vehicle_type_motorcycle-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
-    climatiq_unit_of_measurement: "km",
-    climatiq_unit_type: "distance",
-    category: "transport"
-  },
-  {
-    name: "Bus",
-    climatiq_id: "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
-    climatiq_unit_of_measurement: "usd",
-    climatiq_unit_type: "money",
-    category: "transport"
-  },
-  {
-    name: "Car",
-    climatiq_id: "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
-    climatiq_unit_of_measurement: "km",
-    climatiq_unit_type: "distance",
-    category: "transport"
-  },
-  {
-    name: "Fresh Fruit",
-    climatiq_id: "consumer_goods-type_fruit_fresh",
-    climatiq_unit_of_measurement: "t",
-    climatiq_unit_type: "weight",
-    category: "food"
-  },
-  {
-    name: "Beef",
-    climatiq_id: "consumer_goods-type_meat_products_beef",
-    climatiq_unit_of_measurement: "usd",
-    climatiq_unit_type: "money",
-    category: "food"
-  },
-  {
-    name: "Dairy Products",
-    climatiq_id: "consumer_goods-type_dairy_products",
-    climatiq_unit_of_measurement: "usd",
-    climatiq_unit_type: "money",
-    category: "food"
-  },
-  {
-    name: "Electricity",
-    climatiq_id: "electricity-supply_grid-source_supplier_mix",
-    climatiq_unit_of_measurement: "kWh",
-    climatiq_unit_type: "energy",
-    category: "energy"
-  }
-]
-
-# Create ActivityType records
-activity_types_data.each do |activity_type_data|
-  ActivityType.create!(activity_type_data)
-end
-
-#admin_user = User.create(email: 'admin@example.com', password: 'password', admin: true)
+# admin_user = User.create(email: 'admin@example.com', password: 'password', admin: true)
 user = User.create(email: 'user@example.com', password: 'password')
-
+####################################################################################################################
+# activity_types_data = [
+#   {
+#     name: "Motorcycle",
+#     climatiq_id: "passenger_vehicle-vehicle_type_motorcycle-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
+#     climatiq_unit_of_measurement: "km",
+#     climatiq_unit_type: "distance",
+#     category: "transport"
+#   },
+#   {
+#     name: "Bus",
+#     climatiq_id: "passenger_vehicle-vehicle_type_bus-fuel_source_na-distance_na-engine_size_na",
+#     climatiq_unit_of_measurement: "usd",
+#     climatiq_unit_type: "money",
+#     category: "transport"
+#   },
+#   {
+#     name: "Car",
+#     climatiq_id: "passenger_vehicle-vehicle_type_car-fuel_source_na-engine_size_na-vehicle_age_na-vehicle_weight_na",
+#     climatiq_unit_of_measurement: "km",
+#     climatiq_unit_type: "distance",
+#     category: "transport"
+#   },
+#   {
+#     name: "Fresh Fruit",
+#     climatiq_id: "consumer_goods-type_fruit_fresh",
+#     climatiq_unit_of_measurement: "t",
+#     climatiq_unit_type: "weight",
+#     category: "food"
+#   },
+#   {
+#     name: "Beef",
+#     climatiq_id: "consumer_goods-type_meat_products_beef",
+#     climatiq_unit_of_measurement: "usd",
+#     climatiq_unit_type: "money",
+#     category: "food"
+#   },
+#   {
+#     name: "Dairy Products",
+#     climatiq_id: "consumer_goods-type_dairy_products",
+#     climatiq_unit_of_measurement: "usd",
+#     climatiq_unit_type: "money",
+#     category: "food"
+#   },
+#   {
+#     name: "Electricity",
+#     climatiq_id: "electricity-supply_grid-source_supplier_mix",
+#     climatiq_unit_of_measurement: "kWh",
+#     climatiq_unit_type: "energy",
+#     category: "energy"
+#   }
+# ]
+#
+# # Create ActivityType records
+# activity_types_data.each do |activity_type_data|
+#   ActivityType.create!(activity_type_data)
+# end
+##################################################################################################
+#
 Content.create(
   user: user,
   content_type: 'video',
@@ -95,4 +96,68 @@ Content.create(
   title: 'Trends in Global Emissions',
   description: 'Global carbon emissions from fossil fuels have significantly increased since 1900. Since 1970, CO2 emissions have increased by about 90%, with emissions from fossil fuel combustion and industrial processes contributing about 78% of the total greenhouse gas emissions increase from 1970 to 2011. Agriculture, deforestation, and other land-use changes have been the second-largest contributors.[1]
   Emissions of non-CO2 greenhouse gases have also increased significantly since 1900. To learn more about past and projected global emissions of non-CO2 gases, please see the EPA report, Global Anthropogenic Non-CO2 Greenhouse Gas Emissions: 1990-2020.'
+)
+
+
+Activity.create(
+  user_id: 1,
+  carbon_emission: 134,
+  type_id: 1,
+  value: 10,
+  created_at: Time.now - 1.day,
+  updated_at: Time.now - 1.day
+)
+
+Activity.create(
+  user_id: 1,
+  carbon_emission: 15,
+  type_id: 3,
+  value: 34,
+  created_at: Time.now - 2.days,
+  updated_at: Time.now - 2.days
+)
+
+Activity.create(
+  user_id: 1,
+  carbon_emission: 50,
+  type_id: 4,
+  value: 5,
+  created_at: Time.now - 3.days,
+  updated_at: Time.now - 3.days
+)
+
+Activity.create(
+  user_id: 1,
+  carbon_emission: 150,
+  type_id: 3,
+  value: 188,
+  created_at: Time.now - 4.days,
+  updated_at: Time.now - 4.days
+)
+
+Activity.create(
+  user_id: 1,
+  carbon_emission: 44,
+  type_id: 4,
+  value: 4,
+  created_at: Time.now - 5.days,
+  updated_at: Time.now - 5.days
+)
+
+Activity.create(
+  user_id: 1,
+  carbon_emission: 66,
+  type_id: 3,
+  value: 16,
+  created_at: Time.now - 6.days,
+  updated_at: Time.now - 6.days
+)
+
+Activity.create(
+  user_id: 1,
+  carbon_emission: 22,
+  type_id: 4,
+  value: 1,
+  created_at: Time.now - 7.days,
+  updated_at: Time.now - 7.days
 )

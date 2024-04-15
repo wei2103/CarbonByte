@@ -84,6 +84,17 @@ gem 'rails-controller-testing'
 
 gem 'factory_bot_rails', '~> 6.2'
 
+<<<<<<< HEAD
 gem "dockerfile-rails", ">= 1.6", :group => :development
 
 gem "pg", "~> 1.5"
+=======
+gem 'groupdate'
+
+gem 'httparty'
+
+gem "ruby-openai"
+
+
+
+>>>>>>> main

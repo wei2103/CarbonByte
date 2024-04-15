@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 # Ignore development SQLite database
 db/development.sqlite3
 
 # Ignore development log file
 log/development.log
+=======
+# Ignore development SQLite database
+db/development.sqlite3
+
+# Ignore development log file
+log/development.log
+>>>>>>> main

@@ -5,6 +5,7 @@ class UserController < ApplicationController
     @user = User.find(params[:id])
     @activities = Activity.where(user_id: current_user.id)
     activity_types = ActivityType.all
+    @active_page = 'profile'
 
     # Map the activity types, put those that are already in the user's preferences in higher order and with a ⭐ in the name, and those that are not in the user's preferences in lower order
     sorted_activity_types = activity_types.sort_by { |activity_type| current_user.preferences.include?(activity_type) ? 0 : 1 }
