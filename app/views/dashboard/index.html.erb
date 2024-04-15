@@ -24,16 +24,18 @@
     <% end %>
   </div>
   <div class="flex justify-center">
-  <div class="flex justify-center border border-gray-300 p-4 rounded-lg bg-teal-50 border-2">
-  <div class="flex flex-col gap-12 md:gap-16">
-    <div class="flex gap-5 flex-col">
-      <p class="text-left font-bold">Personalized Recommendation Article</p>
-      <p> We provide every user a personal solution ! <br></p>
-      <p> <%= @response %> </p> 
+  <div class="max-w-3xl"> <!-- Set maximum width here -->
+    <div class="flex justify-center border border-gray-300 p-4 rounded-lg bg-teal-50 border-2">
+      <div class="flex flex-col gap-12 md:gap-16">
+        <div class="flex gap-5 flex-col">
+          <p class="text-left font-bold"> Personalized Recommendation Article </p>
+          <p> We provide every user a Personal Solution. <br></p>
+          <p> <%= @response %> </p>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-  </div>
+</div>
 <br>
 <br>
 <br>
