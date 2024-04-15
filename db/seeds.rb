@@ -66,7 +66,7 @@
 # end
 
 #admin_user = User.create(email: 'admin@example.com', password: 'password', admin: true)
-user = User.create(email: 'user@example.com', password: 'password')
+# user = User.create(email: 'user@example.com', password: 'password')
 
 # Content.create(
 #   user: user,
@@ -97,27 +97,8 @@ user = User.create(email: 'user@example.com', password: 'password')
 #   Emissions of non-CO2 greenhouse gases have also increased significantly since 1900. To learn more about past and projected global emissions of non-CO2 gases, please see the EPA report, Global Anthropogenic Non-CO2 Greenhouse Gas Emissions: 1990-2020.'
 # )
 
-# activity_type_1 = ActivityType.create(name: 'Motorcycle', category: 'Transport', climatiq_unit_of_measurement: 'km')
-# activity_type_2 = ActivityType.create(name: 'Car', category: 'Transport', climatiq_unit_of_measurement: 'km')
-# activity_type_3 = ActivityType.create(name: 'Fresh Fruit', category: 'Food', climatiq_unit_of_measurement: 't')
-# activity_type_4 = ActivityType.create(name: 'Car', category: 'Transport', climatiq_unit_of_measurement: 'km')
-# activity_type_5 = ActivityType.create(name: 'Fresh Fruit', category: 'Food', climatiq_unit_of_measurement: 't')
-# activity_type_6 = ActivityType.create(name: 'Car', category: 'Transport', climatiq_unit_of_measurement: 'km')
-# activity_type_7 = ActivityType.create(name: 'Fresh Fruit', category: 'Food', climatiq_unit_of_measurement: 't')
-
-# Create mock Activities associated with ActivityTypes
-# Activity.create([
-#   { user_id: 4, carbon_emission: 134, type_id: 1, value: 10, created_at: Time.now - 1.day, updated_at: Time.now - 1.day },
-#   { user_id: 4, carbon_emission: 15, type_id: 3, value: 34, created_at: Time.now - 2.days, updated_at: Time.now - 2.days },
-#   { user_id: 4, carbon_emission: 50, type_id: 4, value: 5, created_at: Time.now - 3.days, updated_at: Time.now - 3.days },
-#   { user_id: 4, carbon_emission: 150, type_id: 3, value: 188 created_at: Time.now - 4.days, updated_at: Time.now - 4.days },
-#   { user_id: 4, carbon_emission: 44, type_id: 4, value: 4, created_at: Time.now - 5.days, updated_at: Time.now - 5.days },
-#   { user_id: 4, carbon_emission: 66, type_id: 3, value: 16, created_at: Time.now - 6.days, updated_at: Time.now - 5.days },
-#   { user_id: 4, arbon_emission: 22, type_id: 4, value: 1, created_at: Time.now - 7.days, updated_at: Time.now - 5.days  },
-# ])
-
 Activity.create(
-  user_id: 4,
+  user_id: 1,
   carbon_emission: 134,
   type_id: 1,
   value: 10,
@@ -126,7 +107,7 @@ Activity.create(
 )
 
 Activity.create(
-  user_id: 4,
+  user_id: 1,
   carbon_emission: 15,
   type_id: 3,
   value: 34,
@@ -135,7 +116,7 @@ Activity.create(
 )
 
 Activity.create(
-  user_id: 4,
+  user_id: 1,
   carbon_emission: 50,
   type_id: 4,
   value: 5,
@@ -144,7 +125,7 @@ Activity.create(
 )
 
 Activity.create(
-  user_id: 4,
+  user_id: 1,
   carbon_emission: 150,
   type_id: 3,
   value: 188,
@@ -153,7 +134,7 @@ Activity.create(
 )
 
 Activity.create(
-  user_id: 4,
+  user_id: 1,
   carbon_emission: 44,
   type_id: 4,
   value: 4,
@@ -162,7 +143,7 @@ Activity.create(
 )
 
 Activity.create(
-  user_id: 4,
+  user_id: 1,
   carbon_emission: 66,
   type_id: 3,
   value: 16,
@@ -171,7 +152,7 @@ Activity.create(
 )
 
 Activity.create(
-  user_id: 4,
+  user_id: 1,
   carbon_emission: 22,
   type_id: 4,
   value: 1,
