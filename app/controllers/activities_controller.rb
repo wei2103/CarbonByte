@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @activity = Activity.new
   end

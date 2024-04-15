@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  climatiq_id: MyString
-  climatiq_unit_of_measurement: MyString
-  category: MyString
+# one:
+#   name: MyString
+#   climatiq_id: MyString
+#   climatiq_unit_of_measurement: MyString
+#   category: MyString
 
-two:
-  name: MyString
-  climatiq_id: MyString
-  climatiq_unit_of_measurement: MyString
-  category: MyString
+# two:
+#   name: MyString
+#   climatiq_id: MyString
+#   climatiq_unit_of_measurement: MyString
+#   category: MyString

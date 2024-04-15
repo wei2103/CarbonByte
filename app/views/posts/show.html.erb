@@ -1,0 +1,40 @@
+<div class="max-w-lg w-full	flex flex-col align-middle flex-wrap">
+  <div class="flex flex-col gap-6">
+    <div class="post bg-white rounded-md p-4 flex flex-col gap-3">
+      <div class="flex flex-row gap-2">
+        <%= image_tag "help-logo.png", alt: "Help University logo", class: "rounded-full w-10 h-10" %>
+        <div>
+          <%= link_to @post.user.username, user_path(@post.user), class: 'font-bold' %>
+          <p class="text-xs text-[#65676b]"><%= time_ago_in_words(@post.created_at) %></p>
+        </div>
+      </div>
+      <div>
+        <strong><h2 class="text-lg"><%= @post.title %></h2></strong>
+        <p><%= @post.description %></p>
+      </div>
+      
+      <%= form_with model: [ @post, @post.replies.build ], local: true do |form| %>
+        <div class="flex flex-col gap-3">
+          <div class='border border-gray-300 rounded-md p-2 flex flex-col items-end gap-3 bg-[#f0f2f5]'>
+            <%= form.text_area :message, class:"border-none focus:outline-none w-full focus:ring-[#f0f2f5] bg-[#f0f2f5]", placeholder: 'Reply to this post' %>
+            <%= form.submit 'Reply', class: 'bg-blue-500 text-sm py-2 px-5 font-bold text-white text-center w-28' %>
+          </div>
+        </div>
+      <% end %>
+      <ul class="flex gap-3 flex-col replies">
+        <% @post.replies.reverse.each_with_index do |reply, index| %>
+          <% unless index == 0 %>
+            <li class="flex flex-row gap-3">
+              <%= image_tag "help-logo.png", alt: "Help University logo", class: "rounded-full w-10 h-10" %>
+              <div>
+                <%= link_to reply.user.username, user_path(reply.user), class: 'font-bold' %>
+                <p><%= reply.message %></p>
+                <p class="text-xs text-[#65676b]"><%= time_ago_in_words(reply.created_at) %></p>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

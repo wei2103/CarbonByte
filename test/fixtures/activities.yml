@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 1
-  carbon_emission: 1
-  type_id: 1
-  value: 1
+# one:
+#   user_id: 1
+#   carbon_emission: 1
+#   type_id: 1
+#   value: 1
 
-two:
-  user_id: 2
-  carbon_emission: 1
-  type_id: 2
-  value: 1
+# two:
+#   user_id: 2
+#   carbon_emission: 1
+#   type_id: 2
+#   value: 1
