@@ -3,7 +3,7 @@ require "openai"
 class ChatBotService
   def initialize()
     @client = OpenAI::Client.new(
-      access_token: "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"
+      access_token: ENV["OPENAI_API_KEY"]
     )
   end
 
